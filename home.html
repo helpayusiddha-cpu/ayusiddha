@@ -1,0 +1,2175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ayusiddha - Dr. Monali Pawar</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<style>
+  /* ── DESIGN SYSTEM VARIABLES ── */
+  :root {
+    --bg-warm-ivory: #F4EAE2;
+    --bg-warm-ivory-dark: #EBE0D7;
+    --color-forest-green: #1F4D3A;
+    --color-forest-green-rgb: 31, 77, 58;
+    --color-gold: #B88A44;
+    --color-gold-hover: #A37633;
+    --color-text-charcoal: #2F4038;
+    --color-border-beige: #DCCEBF;
+    --color-white: #FFFFFF;
+    --color-white-translucent: rgba(255, 255, 255, 0.8);
+    
+    --font-headings: 'Cormorant Garamond', serif;
+    --font-body: 'Manrope', sans-serif;
+    
+    --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-quick: all 0.2s ease;
+    
+    --shadow-premium: 0 10px 40px -10px rgba(31, 77, 58, 0.08);
+    --shadow-premium-hover: 0 20px 50px -10px rgba(31, 77, 58, 0.15);
+    
+    --border-radius-card: 20px;
+    --border-radius-button: 12px;
+
+    /* Maintain compatibility with older CSS variables */
+    --gold: var(--color-gold);
+    --gold-light: var(--color-gold);
+    --green-deep: var(--color-forest-green);
+    --green-mid: var(--color-forest-green);
+    --cream: var(--bg-warm-ivory);
+    --cream-dark: var(--bg-warm-ivory-dark);
+    --brown-dark: var(--color-forest-green);
+    --text-primary: var(--color-text-charcoal);
+    --text-muted: var(--color-text-charcoal);
+  }
+
+  /* ── BASE RESET & STYLING ── */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--bg-warm-ivory);
+    color: var(--color-text-charcoal);
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: var(--font-body);
+    line-height: 1.6;
+    overflow-x: hidden;
+    background-color: var(--bg-warm-ivory);
+  }
+
+  /* Selection Color */
+  ::-webkit-selection {
+    background-color: rgba(31, 77, 58, 0.1);
+    color: var(--color-forest-green);
+  }
+  ::selection {
+    background-color: rgba(31, 77, 58, 0.1);
+    color: var(--color-forest-green);
+  }
+
+  /* Scrollbar Style */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--bg-warm-ivory-dark);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-border-beige);
+    border-radius: 5px;
+    border: 2px solid var(--bg-warm-ivory-dark);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-gold);
+  }
+
+  /* ── TYPOGRAPHY ── */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-headings);
+    color: var(--color-forest-green);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  p {
+    color: var(--color-text-charcoal);
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 1.75;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition-quick);
+  }
+
+  strong {
+    font-weight: 600;
+    color: var(--color-forest-green);
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 22px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(244, 234, 226, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(220, 206, 191, 0.4);
+    transition: var(--transition-smooth);
+  }
+
+  nav.scrolled {
+    padding: 14px 60px;
+    box-shadow: 0 10px 30px rgba(31, 77, 58, 0.04);
+    background-color: rgba(244, 234, 226, 0.95);
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .nav-logo img {
+    height: 48px;
+    width: auto;
+    transition: var(--transition-smooth);
+  }
+
+  nav.scrolled .nav-logo img {
+    height: 40px;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--color-text-charcoal);
+    position: relative;
+    padding: 6px 0;
+    cursor: pointer;
+    text-transform: none;
+    letter-spacing: normal;
+  }
+
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--color-gold);
+    transition: var(--transition-smooth);
+  }
+
+  .nav-links a:hover {
+    color: var(--color-forest-green);
+  }
+
+  .nav-links a:hover::after {
+    width: 100%;
+  }
+
+  .nav-cta {
+    background-color: var(--color-forest-green) !important;
+    color: var(--color-white) !important;
+    padding: 12px 28px !important;
+    border-radius: 10px !important;
+    font-size: 0.9375rem !important;
+    font-weight: 500 !important;
+    box-shadow: 0 4px 15px rgba(31, 77, 58, 0.15) !important;
+    transition: var(--transition-smooth) !important;
+  }
+
+  .nav-cta::after {
+    display: none !important;
+  }
+
+  .nav-cta:hover {
+    background-color: var(--color-gold) !important;
+    color: var(--color-white) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(184, 138, 68, 0.25) !important;
+  }
+
+  /* ── PAGES ── */
+  .page {
+    display: none;
+  }
+  .page.active {
+    display: block;
+    animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── HERO ── */
+  #hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background-color: var(--bg-warm-ivory);
+    padding-top: 100px;
+  }
+
+  #canvas-hero {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .hero-bg-pattern {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 80% at 70% 50%, rgba(184, 138, 68, 0.08) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 60% at 20% 80%, rgba(31, 77, 58, 0.07) 0%, transparent 60%);
+    z-index: 0;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 80px;
+    max-width: 780px;
+  }
+
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .hero-eyebrow-line {
+    width: 28px;
+    height: 1px;
+    background-color: var(--color-gold);
+  }
+
+  .hero-eyebrow span {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--color-gold);
+  }
+
+  .hero-title {
+    font-family: var(--font-headings);
+    font-size: clamp(3rem, 6.5vw, 5rem);
+    line-height: 1.05;
+    font-weight: 700;
+    color: var(--color-forest-green);
+    margin-bottom: 24px;
+  }
+
+  .hero-title-marathi {
+    font-family: var(--font-body);
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--color-text-charcoal);
+    margin-bottom: 20px;
+    letter-spacing: 0.02em;
+  }
+
+  .hero-desc {
+    font-size: 1.125rem;
+    color: var(--color-text-charcoal);
+    opacity: 0.85;
+    margin-bottom: 44px;
+    max-width: 580px;
+    line-height: 1.75;
+  }
+
+  .hero-btns {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  /* ── BUTTONS ── */
+  .btn-primary, .btn-outline, .product-btn, .btn-submit, .confirm-close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 36px;
+    font-family: var(--font-body);
+    font-size: 1.0625rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    border-radius: var(--border-radius-button);
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    border: 1px solid transparent;
+  }
+
+  .btn-primary, .btn-submit {
+    background-color: var(--color-forest-green);
+    color: var(--color-white);
+    box-shadow: 0 4px 15px rgba(31, 77, 58, 0.15);
+  }
+
+  .btn-primary:hover, .btn-submit:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(31, 77, 58, 0.25);
+    background-color: #173d2d;
+  }
+
+  .btn-outline {
+    background-color: transparent;
+    border: 1.5px solid var(--color-forest-green);
+    color: var(--color-forest-green);
+  }
+
+  .btn-outline:hover {
+    background-color: var(--color-forest-green);
+    color: var(--color-white);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(31, 77, 58, 0.15);
+  }
+
+  .hero-scroll-hint {
+    position: absolute;
+    bottom: 40px;
+    left: 80px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--color-text-charcoal);
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    z-index: 2;
+  }
+
+  .scroll-line {
+    width: 1px;
+    height: 50px;
+    background: linear-gradient(to bottom, var(--color-gold), transparent);
+    animation: scrollPulse 2s ease-in-out infinite;
+  }
+
+  /* ── STATS BAR ── */
+  .stats-bar {
+    background-color: var(--color-forest-green);
+    padding: 60px 80px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    position: relative;
+    z-index: 3;
+  }
+
+  .stat-item {
+    text-align: center;
+    border-right: 1px solid rgba(220, 206, 191, 0.15);
+  }
+
+  .stat-item:last-child {
+    border-right: none;
+  }
+
+  .stat-num {
+    font-family: var(--font-headings);
+    font-size: clamp(3rem, 5vw, 4.5rem);
+    font-weight: 600;
+    color: var(--color-gold);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .stat-label {
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: rgba(244, 234, 226, 0.75);
+  }
+
+  /* ── SECTION COMMON ── */
+  .section {
+    padding: 140px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .section-header {
+    margin-bottom: 80px;
+  }
+
+  .section-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .section-eyebrow-line {
+    width: 28px;
+    height: 1px;
+    background-color: var(--color-gold);
+  }
+
+  .section-eyebrow span {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--color-gold);
+  }
+
+  .section-title {
+    font-family: var(--font-headings);
+    font-size: clamp(2.5rem, 4.5vw, 3.5rem);
+    line-height: 1.15;
+    font-weight: 600;
+    color: var(--color-forest-green);
+    margin-bottom: 24px;
+  }
+
+  .section-subtitle {
+    font-size: 1.25rem;
+    color: var(--color-text-charcoal);
+    opacity: 0.9;
+    max-width: 680px;
+    line-height: 1.75;
+    margin-top: 14px;
+  }
+
+  /* ── ABOUT ── */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 0.95fr 1.05fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .about-canvas-wrap {
+    position: relative;
+    height: 500px;
+    background: radial-gradient(ellipse at center, rgba(31, 77, 58, 0.06) 0%, transparent 70%);
+    border-radius: var(--border-radius-card);
+    overflow: hidden;
+    border: 1px solid var(--color-border-beige);
+    box-shadow: var(--shadow-premium);
+  }
+
+  #canvas-about {
+    width: 100%;
+    height: 100%;
+  }
+
+  .about-quote {
+    font-family: var(--font-headings);
+    font-size: 1.625rem;
+    font-style: italic;
+    color: var(--color-forest-green);
+    line-height: 1.45;
+    margin: 32px 0;
+    padding-left: 24px;
+    border-left: 2px solid var(--color-gold);
+  }
+
+  .about-body {
+    font-size: 1.125rem;
+    color: var(--color-text-charcoal);
+    line-height: 1.75;
+    margin-bottom: 16px;
+  }
+
+  .dosha-pills {
+    display: flex;
+    gap: 12px;
+    margin-top: 32px;
+    flex-wrap: wrap;
+  }
+
+  .dosha-pill {
+    padding: 8px 20px;
+    border-radius: 6px;
+    font-size: 0.8125rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .pill-vata {
+    background-color: rgba(31, 77, 58, 0.08);
+    color: var(--color-forest-green);
+    border: 1px solid rgba(31, 77, 58, 0.2);
+  }
+
+  .pill-pitta {
+    background-color: rgba(184, 138, 68, 0.1);
+    color: var(--color-gold);
+    border: 1px solid rgba(184, 138, 68, 0.25);
+  }
+
+  .pill-kapha {
+    background-color: rgba(47, 64, 56, 0.08);
+    color: var(--color-text-charcoal);
+    border: 1px solid rgba(47, 64, 56, 0.2);
+  }
+
+  /* ── TREATMENTS ── */
+  .treatments-bg {
+    background-color: var(--bg-warm-ivory-dark);
+  }
+
+  .treatments-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+
+  .treatment-card {
+    background-color: var(--bg-warm-ivory);
+    border: 1px solid var(--color-border-beige);
+    border-radius: var(--border-radius-card);
+    padding: 44px 36px;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    box-shadow: var(--shadow-premium);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .treatment-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(184, 138, 68, 0.06) 0%, transparent 60%);
+    opacity: 0;
+    transition: var(--transition-smooth);
+  }
+
+  .treatment-card:hover {
+    background-color: var(--bg-warm-ivory);
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-premium-hover);
+    border-color: var(--color-gold);
+  }
+
+  .treatment-card:hover::before {
+    opacity: 1;
+  }
+
+  .treatment-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 24px;
+    color: var(--color-forest-green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .treatment-icon svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .treatment-name {
+    font-family: var(--font-headings);
+    font-size: 1.5rem;
+    color: var(--color-forest-green);
+    margin-bottom: 12px;
+    font-weight: 600;
+  }
+
+  .treatment-marathi {
+    font-size: 0.875rem;
+    color: var(--color-gold);
+    margin-bottom: 16px;
+    letter-spacing: 0.05em;
+  }
+
+  .treatment-desc {
+    font-size: 0.9375rem;
+    color: var(--color-text-charcoal);
+    line-height: 1.7;
+    opacity: 0.85;
+  }
+
+  .treatment-num {
+    position: absolute;
+    top: 24px;
+    right: 28px;
+    font-family: var(--font-headings);
+    font-size: 3.5rem;
+    font-weight: 300;
+    color: rgba(184, 138, 68, 0.1);
+    line-height: 1;
+    user-select: none;
+  }
+
+  /* ── DOCTOR ── */
+  .doctor-section {
+    background-color: var(--bg-warm-ivory);
+  }
+
+  .doctor-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .doctor-visual {
+    position: relative;
+    width: 100%;
+  }
+
+  #canvas-doctor {
+    width: 100%;
+    height: 400px;
+    border-radius: var(--border-radius-card);
+    background-color: var(--bg-warm-ivory-dark);
+    border: 1px solid var(--color-border-beige);
+    box-shadow: var(--shadow-premium);
+  }
+
+  .doctor-name-plate {
+    background-color: var(--color-forest-green);
+    padding: 32px;
+    border-radius: 0 0 var(--border-radius-card) var(--border-radius-card);
+    box-shadow: var(--shadow-premium);
+    margin-top: -10px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .doctor-name {
+    font-family: var(--font-headings);
+    font-size: 2rem;
+    color: var(--bg-warm-ivory);
+    font-weight: 600;
+  }
+
+  .doctor-title {
+    font-family: var(--font-body);
+    font-size: 0.8125rem;
+    color: var(--color-gold);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-top: 8px;
+    font-weight: 500;
+  }
+
+  .doctor-info {
+    padding-top: 0;
+  }
+
+  .doctor-philosophy {
+    font-family: var(--font-headings);
+    font-size: 1.625rem;
+    font-style: italic;
+    color: var(--color-forest-green);
+    line-height: 1.45;
+    margin-bottom: 32px;
+    padding-left: 24px;
+    border-left: 2px solid var(--color-gold);
+  }
+
+  .doctor-bio {
+    font-size: 1.125rem;
+    color: var(--color-text-charcoal);
+    line-height: 1.75;
+    margin-bottom: 20px;
+  }
+
+  .credentials {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 36px;
+  }
+
+  .credential-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .credential-dot {
+    width: 6px;
+    height: 6px;
+    background-color: var(--color-gold);
+    border-radius: 50%;
+    margin-top: 8px;
+    flex-shrink: 0;
+  }
+
+  .credential-text {
+    font-size: 1rem;
+    color: var(--color-text-charcoal);
+  }
+
+  /* ── PRODUCTS ── */
+  .products-section {
+    background-color: var(--bg-warm-ivory-dark);
+  }
+
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+
+  .product-card {
+    background-color: var(--bg-warm-ivory);
+    border: 1px solid var(--color-border-beige);
+    border-radius: var(--border-radius-card);
+    padding: 44px 32px;
+    text-align: center;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    box-shadow: var(--shadow-premium);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  .product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-premium-hover);
+    border-color: var(--color-gold);
+  }
+
+  .product-icon {
+    font-size: 48px;
+    margin-bottom: 24px;
+  }
+
+  .product-name {
+    font-family: var(--font-headings);
+    font-size: 1.5rem;
+    color: var(--color-forest-green);
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+
+  .product-marathi {
+    font-size: 0.875rem;
+    color: var(--color-text-charcoal);
+    opacity: 0.7;
+    margin-bottom: 16px;
+  }
+
+  .product-price {
+    font-family: var(--font-body);
+    font-size: 1.375rem;
+    font-weight: 600;
+    color: var(--color-gold);
+  }
+
+  .product-price span {
+    font-size: 0.875rem;
+    color: var(--color-text-charcoal);
+    opacity: 0.6;
+    font-weight: 400;
+  }
+
+  .product-btn {
+    margin-top: 24px;
+    width: 100%;
+    background-color: transparent;
+    border: 1px solid var(--color-forest-green);
+    color: var(--color-forest-green);
+    padding: 12px 24px;
+    font-size: 0.9375rem;
+    border-radius: 10px;
+  }
+
+  .product-btn:hover {
+    background-color: var(--color-forest-green);
+    color: var(--color-white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(31, 77, 58, 0.15);
+  }
+
+  /* ── BOOKING ── */
+  .booking-section {
+    background-color: var(--color-forest-green);
+    color: var(--bg-warm-ivory);
+  }
+
+  .booking-section .section-title {
+    color: var(--bg-warm-ivory);
+  }
+
+  .booking-section .section-subtitle {
+    color: rgba(244, 234, 226, 0.75);
+  }
+
+  .booking-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .booking-form {
+    background-color: var(--color-white);
+    border-radius: var(--border-radius-card);
+    padding: 40px;
+    border: 1px solid var(--color-border-beige);
+    box-shadow: var(--shadow-premium-hover);
+  }
+
+  .booking-info-title {
+    font-family: var(--font-headings);
+    font-size: 2rem;
+    color: var(--color-gold);
+    margin-bottom: 32px;
+    font-weight: 600;
+  }
+
+  .booking-feature {
+    display: flex;
+    gap: 18px;
+    margin-bottom: 28px;
+    align-items: flex-start;
+  }
+
+  .bfeat-icon {
+    width: 44px;
+    height: 44px;
+    background-color: rgba(184, 138, 68, 0.12);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--color-gold);
+  }
+
+  .bfeat-icon svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .bfeat-title {
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: var(--color-gold);
+    margin-bottom: 6px;
+  }
+
+  .bfeat-desc {
+    font-size: 0.9375rem;
+    color: rgba(244, 234, 226, 0.75);
+    line-height: 1.6;
+  }
+
+  .contact-strip {
+    margin-top: 40px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(220, 206, 191, 0.15);
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+
+  .contact-item {
+    font-size: 0.9375rem;
+    color: rgba(244, 234, 226, 0.85);
+  }
+
+  .contact-item strong {
+    color: var(--color-gold);
+    display: block;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  /* ── TESTIMONIALS ── */
+  .testimonials-section {
+    background-color: var(--bg-warm-ivory-dark);
+  }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 60px;
+  }
+
+  .testimonial-card {
+    background-color: var(--bg-warm-ivory);
+    padding: 44px 36px;
+    border-radius: var(--border-radius-card);
+    border: 1px solid var(--color-border-beige);
+    box-shadow: var(--shadow-premium);
+    transition: var(--transition-smooth);
+  }
+
+  .testimonial-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-premium-hover);
+    border-color: var(--color-gold);
+  }
+
+  .stars {
+    color: var(--color-gold);
+    font-size: 1rem;
+    margin-bottom: 18px;
+  }
+
+  .testimonial-text {
+    font-family: var(--font-headings);
+    font-size: 1.25rem;
+    color: var(--color-text-charcoal);
+    line-height: 1.6;
+    font-style: italic;
+    margin-bottom: 24px;
+  }
+
+  .testimonial-author {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--color-forest-green);
+  }
+
+  .testimonial-location {
+    font-size: 0.8125rem;
+    color: var(--color-text-charcoal);
+    opacity: 0.7;
+    margin-top: 2px;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background-color: #173226;
+    padding: 100px 80px 40px;
+    color: rgba(244, 234, 226, 0.75);
+    border-top: 1px solid rgba(220, 206, 191, 0.1);
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 80px;
+  }
+
+  .footer-logo {
+    margin-bottom: 24px;
+  }
+
+  .footer-logo img {
+    height: 28px;
+    width: auto;
+  }
+
+  .footer-tagline {
+    font-size: 0.9375rem;
+    color: rgba(244, 234, 226, 0.75);
+    line-height: 1.7;
+    max-width: 280px;
+  }
+
+  .footer-col-title {
+    font-size: 0.8125rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--color-gold);
+    margin-bottom: 28px;
+    font-weight: 600;
+  }
+
+  .footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .footer-links li {
+    margin-bottom: 0;
+  }
+
+  .footer-links a {
+    color: rgba(244, 234, 226, 0.7);
+    font-size: 0.9375rem;
+    transition: var(--transition-quick);
+  }
+
+  .footer-links a:hover {
+    color: var(--color-white);
+    padding-left: 4px;
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(244, 234, 226, 0.08);
+    padding-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .footer-copy {
+    font-size: 0.8125rem;
+    color: rgba(244, 234, 226, 0.6);
+  }
+
+  /* ── FLOATING WHATSAPP ── */
+  .whatsapp-btn {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    z-index: 999;
+    background-color: #25D366;
+    color: var(--color-white);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    animation: whatsappPulse 2.5s ease-in-out infinite;
+  }
+
+  .whatsapp-btn:hover {
+    transform: scale(1.1) translateY(-5px);
+    box-shadow: 0 15px 40px rgba(37, 211, 102, 0.5);
+  }
+
+  @keyframes whatsappPulse {
+    0%, 100% { box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3); }
+    50% { box-shadow: 0 10px 40px rgba(37, 211, 102, 0.6); }
+  }
+
+  /* ── MANDALA OVERLAY ── */
+  .mandala-bg {
+    position: absolute;
+    right: -10%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 700px;
+    height: 700px;
+    opacity: 0.04;
+    pointer-events: none;
+  }
+
+  /* ── ANIMATIONS ── */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── CONFIRMATION ── */
+  .confirm-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(31, 77, 58, 0.4);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-smooth);
+  }
+
+  .confirm-overlay.show {
+    display: flex;
+  }
+
+  .confirm-box {
+    background-color: var(--bg-warm-ivory);
+    padding: 56px;
+    text-align: center;
+    max-width: 480px;
+    border-radius: var(--border-radius-card);
+    border: 1px solid var(--color-border-beige);
+    border-top: 4px solid var(--color-gold);
+    box-shadow: var(--shadow-premium-hover);
+    animation: popScale 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  @keyframes popScale {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+
+  .confirm-icon {
+    font-size: 48px;
+    margin-bottom: 20px;
+  }
+
+  .confirm-title {
+    font-family: var(--font-headings);
+    font-size: 2rem;
+    color: var(--color-forest-green);
+    margin-bottom: 12px;
+    font-weight: 600;
+  }
+
+  .confirm-msg {
+    color: var(--color-text-charcoal);
+    font-size: 1rem;
+    line-height: 1.7;
+    opacity: 0.85;
+  }
+
+  .confirm-close {
+    margin-top: 32px;
+    background-color: var(--color-forest-green);
+    color: var(--color-white);
+    padding: 12px 36px;
+    font-size: 0.9375rem;
+    border-radius: 10px;
+  }
+
+  .confirm-close:hover {
+    background-color: #173d2d;
+  }
+
+  /* ── MOBILE RESPONSIVENESS ── */
+  .nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 26px;
+    height: 18px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1002;
+  }
+
+  .nav-toggle span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-forest-green);
+    transition: var(--transition-smooth);
+    border-radius: 2px;
+  }
+
+  @media (max-width: 1024px) {
+    .section {
+      padding: 100px 40px;
+    }
+    
+    .stats-bar {
+      padding: 40px;
+    }
+
+    .about-grid, .doctor-grid, .booking-grid {
+      gap: 60px;
+    }
+
+    .products-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .testimonials-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .footer-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+    }
+
+    /* Mobile menu activation */
+    .nav-toggle {
+      display: flex;
+    }
+
+    .nav-links {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 100%;
+      max-width: 320px;
+      height: 100vh;
+      background-color: var(--bg-warm-ivory);
+      box-shadow: -10px 0 40px rgba(31, 77, 58, 0.15);
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 32px;
+      transition: var(--transition-smooth);
+      z-index: 1001;
+      border-left: 1px solid var(--color-border-beige);
+      padding: 40px;
+    }
+
+    .nav-links.active {
+      right: 0;
+    }
+
+    .nav-links li {
+      width: 100%;
+      text-align: center;
+    }
+
+    .nav-links a {
+      font-size: 1.125rem;
+      width: 100%;
+      display: block;
+      padding: 8px 0;
+    }
+
+    .nav-cta {
+      width: 100%;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .nav-toggle.active span:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+
+    .nav-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .nav-toggle.active span:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+
+    nav {
+      padding: 16px 32px;
+    }
+
+    nav.scrolled {
+      padding: 12px 32px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .about-grid, .doctor-grid, .booking-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .about-canvas-wrap {
+      height: 400px;
+    }
+
+    #canvas-doctor {
+      height: 350px;
+    }
+
+    .stats-bar {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+
+    .stat-item {
+      border-right: none;
+    }
+
+    .stat-item:nth-child(1), .stat-item:nth-child(2) {
+      border-bottom: 1px solid rgba(220, 206, 191, 0.15);
+      padding-bottom: 20px;
+    }
+
+    .treatments-grid {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .testimonials-grid {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    #hero {
+      height: auto;
+      min-height: 100vh;
+      padding: 140px 32px 80px;
+      align-items: flex-start;
+    }
+
+    .hero-content {
+      padding: 0;
+    }
+
+    .hero-scroll-hint {
+      display: none;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .section {
+      padding: 80px 20px;
+    }
+
+    nav {
+      padding: 16px 20px;
+    }
+
+    nav.scrolled {
+      padding: 12px 20px;
+    }
+
+    .stats-bar {
+      grid-template-columns: 1fr;
+      padding: 40px 20px;
+    }
+
+    .stat-item {
+      border-bottom: 1px solid rgba(220, 206, 191, 0.15);
+      padding-bottom: 20px;
+    }
+
+    .stat-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .products-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .whatsapp-btn {
+      bottom: 24px;
+      right: 24px;
+      width: 50px;
+      height: 50px;
+    }
+
+    .hero-btns {
+      flex-direction: column;
+      width: 100%;
+      gap: 12px;
+    }
+
+    .btn-primary, .btn-outline {
+      width: 100%;
+      text-align: center;
+    }
+
+    .booking-form {
+      padding: 24px;
+    }
+
+    .confirm-box {
+      padding: 36px 20px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <a class="nav-logo" onclick="showPage('home')">
+    <img src="logo.svg" alt="Ayusiddha">
+  </a>
+  <ul class="nav-links">
+    <li><a onclick="showPage('home')">Home</a></li>
+    <li><a onclick="showPage('about')">About</a></li>
+    <li><a onclick="showPage('treatments')">Treatments</a></li>
+    <li><a onclick="showPage('doctor')">Our Doctor</a></li>
+    <li><a onclick="showPage('shop')">Shop</a></li>
+    <li><a onclick="showPage('booking')" class="nav-cta">Book Appointment</a></li>
+  </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>
+
+<!-- HOME PAGE -->
+<div class="page active" id="page-home">
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-bg-pattern"></div>
+    <canvas id="canvas-hero"></canvas>
+    <svg class="mandala-bg" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+      <g transform="translate(200,200)">
+        <circle r="180" fill="none" stroke="#1F4D3A" stroke-width="0.5"/>
+        <circle r="150" fill="none" stroke="#B88A44" stroke-width="0.5"/>
+        <circle r="120" fill="none" stroke="#1F4D3A" stroke-width="0.5"/>
+        <circle r="90" fill="none" stroke="#B88A44" stroke-width="0.5"/>
+        <circle r="60" fill="none" stroke="#1F4D3A" stroke-width="0.5"/>
+        <circle r="30" fill="none" stroke="#B88A44" stroke-width="0.5"/>
+        <g id="petals">
+          <script>for(var i=0;i<24;i++){document.write('<line x1="0" y1="0" x2="'+180*Math.cos(i*Math.PI/12)+'" y2="'+180*Math.sin(i*Math.PI/12)+'" stroke="#1F4D3A" stroke-width="0.3" />')}</script>
+        </g>
+      </g>
+    </svg>
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <div class="hero-eyebrow-line"></div>
+        <span>Ancient Wisdom · आयुर्वेद</span>
+      </div>
+      <h1 class="hero-title">Heal from Within.<br><span style="font-weight: 300; font-style: italic; color: var(--gold);">Reclaim Your Balance.</span></h1>
+      <p class="hero-title-marathi">आयुषाची सिद्धी — जीवनाचे संतुलन</p>
+      <p class="hero-desc">Experience premium, doctor-led Ayurvedic healthcare. We integrate ancestral wisdom with modern wellness to address the root causes of chronic illness, restoring harmony to your unique constitution (Prakriti).</p>
+      <div class="hero-btns">
+        <button class="btn-primary" onclick="showPage('booking')">Book an Online Consultation</button>
+        <button class="btn-outline" onclick="showPage('treatments')">Explore Treatments</button>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats-bar">
+    <div class="stat-item fade-up"><div class="stat-num" id="count1">0</div><div class="stat-label">Years of Practice</div></div>
+    <div class="stat-item fade-up"><div class="stat-num" id="count2">0</div><div class="stat-label">Patients Healed</div></div>
+    <div class="stat-item fade-up"><div class="stat-num" id="count3">0</div><div class="stat-label">Treatments Offered</div></div>
+    <div class="stat-item fade-up"><div class="stat-num" id="count4">0</div><div class="stat-label">Herbal Products</div></div>
+  </div>
+
+  <!-- BRIEF ABOUT -->
+  <section class="section about-grid fade-up">
+    <div class="about-canvas-wrap">
+      <canvas id="canvas-about"></canvas>
+    </div>
+    <div class="about-text">
+      <div class="section-eyebrow"><div class="section-eyebrow-line"></div><span>Who We Are</span></div>
+      <h2 class="section-title">Where Ancient Science Meets Compassionate Care</h2>
+      <blockquote class="about-quote">"Ayurveda is not merely a system of medicine, it is a science of life."</blockquote>
+      <p class="about-body">At Ayusiddha, we practice authentic Ayurvedic medicine rooted in the classical texts of Charaka Samhita and Sushruta Samhita. Our approach identifies your unique prakriti and restores doshic harmony.</p>
+      <p class="about-body">Every consultation, every treatment is deeply personalised — because no two bodies are the same, and no two healing journeys should be either.</p>
+      <div class="dosha-pills">
+        <span class="dosha-pill pill-vata">Vata · वात</span>
+        <span class="dosha-pill pill-pitta">Pitta · पित्त</span>
+        <span class="dosha-pill pill-kapha">Kapha · कफ</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials-section">
+    <div class="section-header">
+      <div class="section-eyebrow"><div class="section-eyebrow-line"></div><span>Patient Stories</span></div>
+      <h2 class="section-title">Lives Transformed</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card fade-up">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"After years of chronic fatigue, just 3 weeks of Panchakarma at Ayusiddha completely rejuvenated me. I feel like I am 20 years younger."</p>
+        <div class="testimonial-author">Smt. Vandana Kulkarni</div>
+        <div class="testimonial-location">Pune, Maharashtra</div>
+      </div>
+      <div class="testimonial-card fade-up">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"The Shirodhara treatment was transformative. My anxiety and insomnia are completely healed. The doctor's knowledge of Ayurveda is extraordinary."</p>
+        <div class="testimonial-author">Mr. Rahul Deshmukh</div>
+        <div class="testimonial-location">Nashik, Maharashtra</div>
+      </div>
+      <div class="testimonial-card fade-up">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"I came with severe joint pain. The herbal formulations and Abhyanga massages have given me back my mobility. Truly life-changing experience."</p>
+        <div class="testimonial-author">Smt. Asha Pawar</div>
+        <div class="testimonial-location">Aurangabad, Maharashtra</div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ABOUT PAGE -->
+<div class="page" id="page-about">
+  <div style="padding-top: 80px; background: var(--cream-dark); min-height: 100vh;">
+    <section class="section">
+      <div class="section-header">
+        <div class="section-eyebrow"><div class="section-eyebrow-line"></div><span>Our Story · आमची कहाणी</span></div>
+        <h2 class="section-title">Rooted in Tradition,<br>Guided by Science</h2>
+        <p class="section-subtitle">Ayusiddha was founded with a single mission — to make authentic Ayurvedic healing accessible to all, honouring the wisdom of our ancestors while embracing modern diagnostic precision.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
+        <div>
+          <p class="about-body">The name <em>Ayusiddha</em> — आयुसिद्ध — means "mastery of life." It reflects our deepest commitment: not just treating symptoms, but understanding the root of imbalance and restoring the body's innate intelligence.</p>
+          <p class="about-body" style="margin-top: 16px;">We follow the classical Ashtanga Hridayam principles: diet, lifestyle, seasonal regimen, and targeted therapies working together in harmony. Every patient receives a detailed prakriti analysis before any treatment begins.</p>
+          <p class="about-body" style="margin-top: 16px;">Our clinic is a sanctuary — thoughtfully designed to awaken the senses, calm the nervous system, and prepare the body for deep healing from the moment you arrive.</p>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 40px;">
+            <div style="background: white; padding: 24px; border-radius: 2px; border-left: 3px solid var(--gold);">
+              <div style="font-family: 'Cormorant Garamond', serif; font-size: 36px; color: var(--green-deep);">3+</div>
+              <div style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">Years Experience</div>
+            </div>
+            <div style="background: white; padding: 24px; border-radius: 2px; border-left: 3px solid var(--gold);">
+              <div style="font-family: 'Cormorant Garamond', serif; font-size: 36px; color: var(--green-deep);">100+</div>
+              <div style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">Patients Treated</div>
+            </div>
+            <div style="background: white; padding: 24px; border-radius: 2px; border-left: 3px solid var(--gold);">
+              <div style="font-family: 'Cormorant Garamond', serif; font-size: 36px; color: var(--green-deep);">5+</div>
+              <div style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">Core Treatments</div>
+            </div>
+            <div style="background: white; padding: 24px; border-radius: 2px; border-left: 3px solid var(--gold);">
+              <div style="font-family: 'Cormorant Garamond', serif; font-size: 36px; color: var(--green-deep);">10+</div>
+              <div style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">Herbal Products</div>
+            </div>
+          </div>
+        </div>
+        <div style="background: var(--green-deep); padding: 56px; border-radius: 2px;">
+          <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 28px; color: var(--gold-light); margin-bottom: 32px;">Our Philosophy · आमचे तत्त्वज्ञान</h3>
+          <div style="display: flex; flex-direction: column; gap: 24px;">
+            <div style="display: flex; gap: 18px;">
+              <div style="width: 36px; height: 36px; background: rgba(184,138,68,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--gold); font-size: 14px; font-weight: 600;">1</div>
+              <div><div style="color: var(--gold-light); font-size: 15px; font-weight: 500; margin-bottom: 4px;">Personalised Prakriti Analysis</div><div style="color: rgba(245,233,204,0.5); font-size: 13px; line-height: 1.6;">Every body is unique. We begin by deeply understanding your constitution before recommending any treatment.</div></div>
+            </div>
+            <div style="display: flex; gap: 18px;">
+              <div style="width: 36px; height: 36px; background: rgba(184,138,68,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--gold); font-size: 14px; font-weight: 600;">2</div>
+              <div><div style="color: var(--gold-light); font-size: 15px; font-weight: 500; margin-bottom: 4px;">Root Cause Healing</div><div style="color: rgba(245,233,204,0.5); font-size: 13px; line-height: 1.6;">We do not mask symptoms. We trace imbalance to its source and address it holistically.</div></div>
+            </div>
+            <div style="display: flex; gap: 18px;">
+              <div style="width: 36px; height: 36px; background: rgba(184,138,68,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--gold); font-size: 14px; font-weight: 600;">3</div>
+              <div><div style="color: var(--gold-light); font-size: 15px; font-weight: 500; margin-bottom: 4px;">Classical Purity</div><div style="color: rgba(245,233,204,0.5); font-size: 13px; line-height: 1.6;">All formulations are prepared from organically sourced herbs, following classical Ayurvedic pharmacopoeia.</div></div>
+            </div>
+            <div style="display: flex; gap: 18px;">
+              <div style="width: 36px; height: 36px; background: rgba(184,138,68,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--gold); font-size: 14px; font-weight: 600;">4</div>
+              <div><div style="color: var(--gold-light); font-size: 15px; font-weight: 500; margin-bottom: 4px;">Ongoing Support</div><div style="color: rgba(245,233,204,0.5); font-size: 13px; line-height: 1.6;">Healing is a journey. We walk alongside you with follow-ups, diet guidance, and seasonal protocols.</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<!-- TREATMENTS PAGE -->
+<div class="page" id="page-treatments">
+  <div style="padding-top: 80px; min-height: 100vh;">
+    <section class="section treatments-bg" style="padding: 80px;">
+      <div class="section-header">
+        <div class="section-eyebrow"><div class="section-eyebrow-line"></div><span>Our Therapies · उपचार</span></div>
+        <h2 class="section-title">The Five Sacred Therapies</h2>
+        <p class="section-subtitle">Each treatment is a complete science in itself — drawing from thousands of years of accumulated wisdom, refined and personalised for the modern patient.</p>
+      </div>
+      <div class="treatments-grid">
+        <div class="treatment-card fade-up">
+          <div class="treatment-num">01</div>
+          <div class="treatment-icon">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="20" cy="20" r="16" stroke="#B88A44" stroke-width="1"/>
+              <path d="M12 20 Q16 14 20 20 Q24 26 28 20" stroke="#B88A44" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+              <circle cx="20" cy="20" r="3" fill="#B88A44" opacity="0.5"/>
+            </svg>
+          </div>
+          <div class="treatment-name">Panchakarma</div>
+          <div class="treatment-marathi">पंचकर्म — पाच शुद्धीकरण कर्म</div>
+          <div class="treatment-desc">The crown jewel of Ayurvedic treatment. A comprehensive five-step detoxification process that removes deep-seated toxins (ama), rejuvenates tissues, and restores doshic balance at the cellular level. Customised 7, 14, or 21-day programmes available.</div>
+        </div>
+        <div class="treatment-card fade-up">
+          <div class="treatment-num">02</div>
+          <div class="treatment-icon">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 8 C14 8 8 14 8 20 C8 28 16 34 20 34 C24 34 32 28 32 20 C32 14 26 8 20 8Z" stroke="#B88A44" stroke-width="1"/>
+              <path d="M14 18 Q17 22 20 18 Q23 14 26 18" stroke="#B88A44" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+            </svg>
+          </div>
+          <div class="treatment-name">Abhyanga</div>
+          <div class="treatment-marathi">अभ्यंग — सर्वांग तेल मालिश</div>
+          <div class="treatment-desc">A deeply nourishing full-body warm oil massage using medicated oils tailored to your dosha. Performed by trained therapists with precise marma point stimulation, it penetrates tissues to release tension, improve circulation, and calm the nervous system.</div>
+        </div>
+        <div class="treatment-card fade-up">
+          <div class="treatment-num">03</div>
+          <div class="treatment-icon">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 6 L20 16" stroke="#B88A44" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M14 10 Q20 24 26 10" stroke="#B88A44" stroke-width="1" fill="rgba(184,138,68,0.1)"/>
+              <circle cx="20" cy="28" r="6" stroke="#B88A44" stroke-width="1"/>
+              <path d="M20 22 L20 28" stroke="#B88A44" stroke-width="1" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="treatment-name">Shirodhara</div>
+          <div class="treatment-marathi">शिरोधारा — मस्तक तेल धारा</div>
+          <div class="treatment-desc">A profoundly meditative therapy where a continuous stream of warm medicated oil flows gently onto the forehead. Shirodhara stills the mind, heals stress disorders, insomnia, anxiety, and migraine, and activates the body's parasympathetic state.</div>
+        </div>
+        <div class="treatment-card fade-up">
+          <div class="treatment-num">04</div>
+          <div class="treatment-icon">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10 30 Q12 16 20 12 Q28 16 30 30" stroke="#B88A44" stroke-width="1" fill="none"/>
+              <circle cx="20" cy="10" r="3" stroke="#B88A44" stroke-width="1"/>
+              <path d="M16 22 Q20 18 24 22" stroke="#B88A44" stroke-width="1" stroke-linecap="round" fill="none"/>
+              <circle cx="15" cy="27" r="2" fill="rgba(184,138,68,0.3)"/>
+              <circle cx="25" cy="27" r="2" fill="rgba(184,138,68,0.3)"/>
+            </svg>
+          </div>
+          <div class="treatment-name">Herbal Treatments</div>
+          <div class="treatment-marathi">औषधी — शास्त्रीय वनस्पती चिकित्सा</div>
+          <div class="treatment-desc">Classical Ayurvedic herbal formulations prepared from certified organic herbs — kashayas, churnas, arishtams, ghritas, and tailas — prescribed precisely based on your diagnosis, season, and digestive capacity (agni).</div>
+        </div>
+        <div class="treatment-card fade-up">
+          <div class="treatment-num">05</div>
+          <div class="treatment-icon">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="20" cy="20" r="14" stroke="#B88A44" stroke-width="1"/>
+              <path d="M20 10 L22 17 L29 17 L23.5 21.5 L25.5 28.5 L20 24 L14.5 28.5 L16.5 21.5 L11 17 L18 17 Z" stroke="#B88A44" stroke-width="1" fill="rgba(184,138,68,0.08)"/>
+            </svg>
+          </div>
+          <div class="treatment-name">Dietary Consultation</div>
+          <div class="treatment-marathi">आहार परामर्श — पथ्यापथ्य मार्गदर्शन</div>
+          <div class="treatment-desc">In Ayurveda, food is the first medicine. Our detailed ahara consultation designs a seasonal, dosha-specific diet plan — specifying ideal foods, timings, cooking methods, and incompatible combinations — as a foundation for lasting health.</div>
+        </div>
+        <div class="treatment-card fade-up" style="background: rgba(184,138,68,0.06); border-color: rgba(184,138,68,0.25);">
+          <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; text-align: center; padding: 20px;">
+            <div style="font-family: 'Cormorant Garamond', serif; font-size: 28px; color: var(--gold-light); margin-bottom: 16px;">Not Sure Where to Begin?</div>
+            <p style="font-size: 14px; color: rgba(245,233,204,0.5); line-height: 1.7; margin-bottom: 28px;">Book an initial prakriti assessment and we will guide you to the ideal treatment pathway.</p>
+            <button class="btn-primary" onclick="showPage('booking')" style="background: var(--gold); color: var(--brown-dark);">Book Assessment</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<!-- DOCTOR PAGE -->
+<div class="page" id="page-doctor">
+  <div style="padding-top: 80px; background: var(--cream); min-height: 100vh;">
+    <section class="section doctor-section">
+      <div class="section-header">
+        <div class="section-eyebrow"><div class="section-eyebrow-line"></div><span>Our Healer · वैद्य</span></div>
+        <h2 class="section-title">Meet Your Doctor</h2>
+      </div>
+      <div class="doctor-grid">
+        <div class="doctor-visual">
+          <canvas id="canvas-doctor"></canvas>
+          <div class="doctor-name-plate">
+            <div class="doctor-name">Dr. Monali Pawar</div>
+            <div class="doctor-title">BAMS · MD (Panchkarma) · Ayurvedic Specialist</div>
+          </div>
+        </div>
+        <div class="doctor-info">
+          <p class="doctor-philosophy">"True healing begins when we listen to the body in its own language — the language of the elements."</p>
+          <p class="doctor-bio">Dr. Monali Pawar brings over 3 years of dedicated Ayurvedic practice to Ayusiddha. She is a trusted practitioner with deep expertise in holistic healing, lifestyle correction, and personalized patient care.</p>
+          <p class="doctor-bio" style="margin-top: 12px;">Through one-on-one online consultations, she helps patients manage chronic conditions, detox their bodies, and restore doshic balance using traditional Ayurvedic principles and tailormade therapies.</p>
+          <p class="doctor-bio" style="margin-top: 12px;">Dr. Pawar specializes in treating a wide range of issues including liver disease, PCOD, PCOS, chocolate cysts, obesity, thyroid disorders, skin problems, anemia, hair loss, dandruff, alopecia, and scalp psoriasis.</p>
+          <div class="credentials">
+            <div class="credential-item"><div class="credential-dot"></div><div class="credential-text">BAMS — Bachelor of Ayurvedic Medicine and Surgery</div></div>
+            <div class="credential-item"><div class="credential-dot"></div><div class="credential-text">MD (Panchkarma) — Specialization in Ayurvedic Detoxification</div></div>
+            <div class="credential-item"><div class="credential-dot"></div><div class="credential-text">Expert in Holistic Healing and Lifestyle Correction</div></div>
+            <div class="credential-item"><div class="credential-dot"></div><div class="credential-text">3+ years clinical practice, 100+ patients treated</div></div>
+          </div>
+          <div style="margin-top: 40px; display: flex; gap: 16px;">
+            <button class="btn-primary" onclick="showPage('booking')">Book with Dr. Monali</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<!-- SHOP PAGE -->
+<div class="page" id="page-shop">
+  <div style="padding-top: 80px; min-height: 100vh;">
+    <section class="section products-section">
+      <div class="section-header">
+        <div class="section-eyebrow"><div class="section-eyebrow-line"></div><span>Herbal Store · आयुर्वेदिक दुकान</span></div>
+        <h2 class="section-title">Classical Formulations</h2>
+        <p class="section-subtitle">Prepared from organically sourced herbs. Every product follows classical Ayurvedic pharmacopoeia standards — no artificial additives, no shortcuts.</p>
+      </div>
+      <div class="products-grid">
+        <div class="product-card fade-up">
+          <div class="product-icon">🧴</div>
+          <div class="product-name">Herbal Shampoo</div>
+          <div class="product-marathi">हर्बल शॅम्पू</div>
+          <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 12px; line-height: 1.5;">Gently removes dirt, oil, and buildup while maintaining the scalp's natural balance. Prevents dryness and keeps hair soft.</div>
+          <div class="product-price">₹250 <span>/ 200ml</span></div>
+          <button class="product-btn">Add to Cart</button>
+        </div>
+        <div class="product-card fade-up">
+          <div class="product-icon">🌿</div>
+          <div class="product-name">Herbal Hair Oil</div>
+          <div class="product-marathi">हर्बल हेअर ऑइल</div>
+          <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 12px; line-height: 1.5;">Relieves itching, early greying of hair, dandruff, scalp psoriasis, postpartum hair loss, and male/female pattern baldness.</div>
+          <div class="product-price">₹380 <span>/ 100ml</span></div>
+          <button class="product-btn">Add to Cart</button>
+        </div>
+        <div class="product-card fade-up">
+          <div class="product-icon">✨</div>
+          <div class="product-name">Hair Growth Serum</div>
+          <div class="product-marathi">हेअर ग्रोथ सिरम</div>
+          <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 12px; line-height: 1.5;">Lightweight yet potent formulation designed to reduce hair fall, activate hair roots, and support faster, healthier hair growth.</div>
+          <div class="product-price">₹450 <span>/ 25ml</span></div>
+          <button class="product-btn">Add to Cart</button>
+        </div>
+        <div class="product-card fade-up">
+          <div class="product-icon">🧼</div>
+          <div class="product-name">Herbal Face Wash</div>
+          <div class="product-marathi">हर्बल फेस वॉश</div>
+          <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 12px; line-height: 1.5;">Removes dirt and excess oil while keeping your skin fresh, soft, and balanced.</div>
+          <div class="product-price">₹280 <span>/ 200ml</span></div>
+          <button class="product-btn">Add to Cart</button>
+        </div>
+        <div class="product-card fade-up">
+          <div class="product-icon">🫙</div>
+          <div class="product-name">Kumkumadi Ghrita</div>
+          <div class="product-marathi">कुंकुमादी घृत</div>
+          <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 12px; line-height: 1.5;">Enhances natural glow and reduces pigmentation for radiant, even-toned skin.</div>
+          <div class="product-price">₹450 <span>/ 30g</span></div>
+          <button class="product-btn">Add to Cart</button>
+        </div>
+        <div class="product-card fade-up">
+          <div class="product-icon">🪷</div>
+          <div class="product-name">Shatadhaut Ghrita</div>
+          <div class="product-marathi">शतधौत घृत</div>
+          <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 12px; line-height: 1.5;">Deeply cools, heals, and repairs sensitive or damaged skin naturally.</div>
+          <div class="product-price">₹380 <span>/ 30g</span></div>
+          <button class="product-btn">Add to Cart</button>
+        </div>
+        <div class="product-card fade-up">
+          <div class="product-icon">🧼</div>
+          <div class="product-name">Herbal Detan Soap</div>
+          <div class="product-marathi">हर्बल डिटॅन सोप</div>
+          <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 12px; line-height: 1.5;">Helps remove tanning and dullness. Restores natural skin brightness.</div>
+          <div class="product-price">₹120 <span>/ 100g</span></div>
+          <button class="product-btn">Add to Cart</button>
+        </div>
+        <div class="product-card fade-up">
+          <div class="product-icon">🧴</div>
+          <div class="product-name">Acne Cream</div>
+          <div class="product-marathi">ॲक्ने क्रीम</div>
+          <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 12px; line-height: 1.5;">Targets pimples at the root to give you clear, calm, and healthy skin.</div>
+          <div class="product-price">₹380 <span>/ 30g</span></div>
+          <button class="product-btn">Add to Cart</button>
+        </div>
+        <div class="product-card fade-up" style="border: 1px solid var(--gold);">
+          <div class="product-icon">🌟</div>
+          <div class="product-name">SuvarnaPrashan</div>
+          <div class="product-marathi">सुवर्णप्राशन</div>
+          <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 12px; line-height: 1.5;"><strong>Best Seller.</strong> Classical formulation enriched with Swarna (Gold) Bhasma to support child's immunity and brain development.</div>
+          <div class="product-price">₹1800 <span>/ 25ml</span></div>
+          <button class="product-btn" style="background: var(--gold); color: var(--brown-dark);">Add to Cart</button>
+        </div>
+        <div class="product-card fade-up">
+          <div class="product-icon">💫</div>
+          <div class="product-name">Face Glow Serum</div>
+          <div class="product-marathi">फेस ग्लो सिरम</div>
+          <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 12px; line-height: 1.5;">Lightweight formulation designed to deeply hydrate, brighten, and restore your skin's natural radiance.</div>
+          <div class="product-price">₹450 <span>/ 25ml</span></div>
+          <button class="product-btn">Add to Cart</button>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<!-- BOOKING PAGE -->
+<div class="page" id="page-booking">
+  <div style="padding-top: 80px; min-height: 100vh;">
+    <section class="section booking-section">
+      <div class="section-header">
+        <div class="section-eyebrow"><div class="section-eyebrow-line"></div><span>Book Appointment · भेट बुक करा</span></div>
+        <h2 class="section-title">Begin Your Healing Journey</h2>
+        <p class="section-subtitle">Reserve your appointment with Dr. Monali Pawar. Online consultations include a detailed health analysis, personalized diagnosis, and customized lifestyle plans.</p>
+      </div>
+      <div class="booking-grid">
+        <div class="booking-form" style="background: white; padding: 20px; border-radius: 4px; border: 1px solid rgba(184,138,68,0.2);">
+          <!-- Calendly inline widget begin -->
+          <div class="calendly-inline-widget" data-url="https://calendly.com/help-ayusiddha/paid-consultation-with-dr-monali" style="min-width:320px;height:700px;"></div>
+          <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+          <!-- Calendly inline widget end -->
+        </div>
+        <div class="booking-info">
+          <h3 class="booking-info-title">What to Expect</h3>
+          <div class="booking-feature">
+            <div class="bfeat-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="#B88A44" stroke-width="1.2"/><path d="M7 10 L9 12 L13 8" stroke="#B88A44" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div><div class="bfeat-title">Detailed Prakriti Analysis</div><div class="bfeat-desc">60-minute initial consultation with nadi pariksha (pulse diagnosis), tongue, eye & skin assessment.</div></div>
+          </div>
+          <div class="booking-feature">
+            <div class="bfeat-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="3" y="3" width="14" height="14" rx="2" stroke="#B88A44" stroke-width="1.2"/><path d="M7 10 H13 M10 7 V13" stroke="#B88A44" stroke-width="1.2" stroke-linecap="round"/></svg></div>
+            <div><div class="bfeat-title">Personalised Treatment Plan</div><div class="bfeat-desc">Custom protocol including diet, lifestyle, herbal formulations, and therapy schedule.</div></div>
+          </div>
+          <div class="booking-feature">
+            <div class="bfeat-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10 C4 6.7 6.7 4 10 4 C13.3 4 16 6.7 16 10 C16 13.3 13.3 16 10 16" stroke="#B88A44" stroke-width="1.2" stroke-linecap="round"/><path d="M4 16 L7 13 M4 16 L7 16" stroke="#B88A44" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div><div class="bfeat-title">Ongoing Follow-up Support</div><div class="bfeat-desc">Progress tracking with scheduled follow-ups and WhatsApp check-ins between visits.</div></div>
+          </div>
+          <div class="booking-feature">
+            <div class="bfeat-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 3 L12.5 8 L18 8.5 L14 12.5 L15.5 18 L10 15 L4.5 18 L6 12.5 L2 8.5 L7.5 8 Z" stroke="#B88A44" stroke-width="1.2" fill="none"/></svg></div>
+            <div><div class="bfeat-title">Consultation Fee: ₹499</div><div class="bfeat-desc">Payable online. Includes personalized diagnostic advice and herbal recommendations.</div></div>
+          </div>
+          <div class="contact-strip">
+            <div class="contact-item"><strong>Phone</strong>+91 8302898820</div>
+            <div class="contact-item"><strong>Mode</strong>Online via Video Call</div>
+            <div class="contact-item"><strong>Duration</strong>20 – 30 mins</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo"><img src="Wordmark_gold.svg" alt="Ayusiddha"></div>
+      <p class="footer-tagline">Ayusiddha represents premium, doctor-led clinical Ayurvedic treatments. We restore biological balance and address metabolic, hormonal, skin, and hair disorders from their roots.</p>
+      <p style="font-size: 12px; color: rgba(245,233,204,0.3); margin-top: 16px; font-style: italic;">आयुर्वेदं अमृतम् — Ayurveda is immortality</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Navigate</div>
+      <ul class="footer-links">
+        <li><a onclick="showPage('home')">Home</a></li>
+        <li><a onclick="showPage('about')">About Us</a></li>
+        <li><a onclick="showPage('treatments')">Treatments</a></li>
+        <li><a onclick="showPage('doctor')">Our Doctor</a></li>
+        <li><a onclick="showPage('shop')">Herbal Shop</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Treatments</div>
+      <ul class="footer-links">
+        <li><a onclick="showPage('treatments')">Panchakarma</a></li>
+        <li><a onclick="showPage('treatments')">Abhyanga</a></li>
+        <li><a onclick="showPage('treatments')">Shirodhara</a></li>
+        <li><a onclick="showPage('treatments')">Herbal Therapy</a></li>
+        <li><a onclick="showPage('treatments')">Diet Consult</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Contact</div>
+      <ul class="footer-links">
+        <li><a href="tel:+918302898820">+91 8302898820</a></li>
+        <li><a href="mailto:help.ayusiddha@gmail.com">help.ayusiddha@gmail.com</a></li>
+        <li><a>Online Consultations Only</a></li>
+        <li><a>Global Access</a></li>
+        <li><a>Video Call via Calendly</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 Ayusiddha Ayurvedic Clinic. All rights reserved. | Designed with ❤️ for healing</div>
+    <div class="footer-copy">BAMS · MD (Panchkarma) · Registered Ayurvedic Practitioner</div>
+  </div>
+</footer>
+
+<!-- WHATSAPP BUTTON -->
+<div class="whatsapp-btn" title="Chat on WhatsApp" onclick="window.open('https://wa.me/918302898820?text=Hello%20Dr.%20Monali,%20I%20would%20like%20to%20inquire%20about%20an%20Ayurvedic%20consultation.', '_blank')">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</div>
+
+<!-- BOOKING CONFIRMATION -->
+<div class="confirm-overlay" id="confirmOverlay">
+  <div class="confirm-box">
+    <div class="confirm-icon">🌿</div>
+    <div class="confirm-title">Appointment Confirmed!</div>
+    <p class="confirm-msg">Namaste! Your appointment request has been received. Dr. Monali's team will contact you shortly to confirm the details.<br><br><em>आपल्या स्वास्थ्याची काळजी आम्हाला आहे।</em></p>
+    <button class="confirm-close" onclick="document.getElementById('confirmOverlay').classList.remove('show')">Close</button>
+  </div>
+</div>
+
+<script>
+// ── PAGE NAVIGATION ──
+function showPage(name) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-' + name).classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  initAnimations();
+  if (name === 'doctor') setTimeout(initDoctorCanvas, 300);
+
+  // Close mobile navigation menu on page changes
+  document.getElementById('navToggle').classList.remove('active');
+  document.querySelector('.nav-links').classList.remove('active');
+}
+
+// ── MOBILE MENU TOGGLE ──
+document.getElementById('navToggle').addEventListener('click', () => {
+  document.getElementById('navToggle').classList.toggle('active');
+  document.querySelector('.nav-links').classList.toggle('active');
+});
+
+// ── SCROLL NAV ──
+window.addEventListener('scroll', () => {
+  document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 40);
+});
+
+// ── COUNTER ANIMATION ──
+function animateCounter(el, target, suffix, duration) {
+  let start = 0;
+  const step = (timestamp) => {
+    if (!start) start = timestamp;
+    const progress = Math.min((timestamp - start) / duration, 1);
+    el.textContent = Math.floor(progress * target) + suffix;
+    if (progress < 1) requestAnimationFrame(step);
+  };
+  requestAnimationFrame(step);
+}
+setTimeout(() => {
+  animateCounter(document.getElementById('count1'), 3, '+', 1500);
+  animateCounter(document.getElementById('count2'), 100, '+', 2000);
+  animateCounter(document.getElementById('count3'), 5, '+', 1000);
+  animateCounter(document.getElementById('count4'), 10, '+', 1800);
+}, 600);
+
+// ── FADE-UP OBSERVER ──
+function initAnimations() {
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+}
+initAnimations();
+
+// ── THREE.JS HERO (floating particles + lotus) ──
+(function initHero() {
+  const canvas = document.getElementById('canvas-hero');
+  const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(60, canvas.clientWidth / canvas.clientHeight, 0.1, 1000);
+  camera.position.set(0, 0, 10);
+
+  // Floating particles
+  const pGeo = new THREE.BufferGeometry();
+  const count = 280;
+  const pos = new Float32Array(count * 3);
+  const sizes = new Float32Array(count);
+  for (let i = 0; i < count; i++) {
+    pos[i * 3] = (Math.random() - 0.5) * 30;
+    pos[i * 3 + 1] = (Math.random() - 0.5) * 20;
+    pos[i * 3 + 2] = (Math.random() - 0.5) * 10;
+    sizes[i] = Math.random() * 0.04 + 0.01;
+  }
+  pGeo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+  const pMat = new THREE.PointsMaterial({ color: 0xB88A44, size: 0.06, transparent: true, opacity: 0.6 });
+  scene.add(new THREE.Points(pGeo, pMat));
+
+  // Rotating torus (mandala ring)
+  const torus1 = new THREE.Mesh(
+    new THREE.TorusGeometry(4, 0.015, 8, 120),
+    new THREE.MeshBasicMaterial({ color: 0xB88A44, transparent: true, opacity: 0.18 })
+  );
+  torus1.position.set(6, 0, -3);
+  scene.add(torus1);
+  const torus2 = new THREE.Mesh(
+    new THREE.TorusGeometry(3.2, 0.01, 8, 100),
+    new THREE.MeshBasicMaterial({ color: 0x1F4D3A, transparent: true, opacity: 0.12 })
+  );
+  torus2.position.set(6, 0, -3);
+  scene.add(torus2);
+  const torus3 = new THREE.Mesh(
+    new THREE.TorusGeometry(2.4, 0.01, 8, 80),
+    new THREE.MeshBasicMaterial({ color: 0xB88A44, transparent: true, opacity: 0.1 })
+  );
+  torus3.position.set(6, 0, -3);
+  scene.add(torus3);
+
+  // Orbiting small spheres (petals)
+  const orbitGroup = new THREE.Group();
+  orbitGroup.position.set(6, 0, -3);
+  const petalMat = new THREE.MeshBasicMaterial({ color: 0xB88A44, transparent: true, opacity: 0.35 });
+  for (let i = 0; i < 12; i++) {
+    const ang = (i / 12) * Math.PI * 2;
+    const sphere = new THREE.Mesh(new THREE.SphereGeometry(0.08, 8, 8), petalMat);
+    sphere.position.set(Math.cos(ang) * 4, Math.sin(ang) * 4, 0);
+    orbitGroup.add(sphere);
+  }
+  for (let i = 0; i < 8; i++) {
+    const ang = (i / 8) * Math.PI * 2;
+    const sphere2 = new THREE.Mesh(new THREE.SphereGeometry(0.06, 8, 8), new THREE.MeshBasicMaterial({ color: 0x1F4D3A, transparent: true, opacity: 0.3 }));
+    sphere2.position.set(Math.cos(ang) * 3.2, Math.sin(ang) * 3.2, 0);
+    orbitGroup.add(sphere2);
+  }
+  scene.add(orbitGroup);
+
+  let t = 0;
+  function animate() {
+    requestAnimationFrame(animate);
+    t += 0.005;
+    orbitGroup.rotation.z = t * 0.4;
+    torus1.rotation.z = t * 0.2;
+    torus1.rotation.x = t * 0.1;
+    torus2.rotation.z = -t * 0.3;
+    torus3.rotation.z = t * 0.5;
+    // Gentle particle drift
+    const positions = pGeo.attributes.position.array;
+    for (let i = 0; i < count; i++) {
+      positions[i * 3 + 1] += 0.005;
+      if (positions[i * 3 + 1] > 10) positions[i * 3 + 1] = -10;
+    }
+    pGeo.attributes.position.needsUpdate = true;
+    renderer.render(scene, camera);
+  }
+  animate();
+
+  window.addEventListener('resize', () => {
+    const w = canvas.clientWidth, h = canvas.clientHeight;
+    renderer.setSize(w, h);
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+  });
+})();
+
+// ── THREE.JS ABOUT CANVAS (rotating herb/crystal) ──
+(function initAbout() {
+  const canvas = document.getElementById('canvas-about');
+  if (!canvas) return;
+  const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(50, canvas.clientWidth / canvas.clientHeight, 0.1, 100);
+  camera.position.set(0, 0, 7);
+
+  // Icosahedron (crystal-like)
+  const geo = new THREE.IcosahedronGeometry(1.8, 1);
+  const edges = new THREE.EdgesGeometry(geo);
+  const lineMat = new THREE.LineBasicMaterial({ color: 0x1F4D3A, transparent: true, opacity: 0.5 });
+  const wireframe = new THREE.LineSegments(edges, lineMat);
+  scene.add(wireframe);
+
+  const solidMat = new THREE.MeshBasicMaterial({ color: 0x1F4D3A, transparent: true, opacity: 0.06, wireframe: false });
+  const solid = new THREE.Mesh(geo, solidMat);
+  scene.add(solid);
+
+  // Outer ring
+  const ringGeo = new THREE.TorusGeometry(2.8, 0.02, 8, 80);
+  const ringMat = new THREE.MeshBasicMaterial({ color: 0xB88A44, transparent: true, opacity: 0.25 });
+  const ring = new THREE.Mesh(ringGeo, ringMat);
+  ring.rotation.x = Math.PI * 0.3;
+  scene.add(ring);
+
+  // Floating dots around it
+  const dotGeo = new THREE.BufferGeometry();
+  const dotPos = new Float32Array(60 * 3);
+  for (let i = 0; i < 60; i++) {
+    const ang = (i / 60) * Math.PI * 2;
+    const r = 3 + Math.sin(ang * 5) * 0.5;
+    dotPos[i * 3] = Math.cos(ang) * r;
+    dotPos[i * 3 + 1] = Math.sin(ang) * r;
+    dotPos[i * 3 + 2] = Math.sin(ang * 3) * 0.8;
+  }
+  dotGeo.setAttribute('position', new THREE.BufferAttribute(dotPos, 3));
+  scene.add(new THREE.Points(dotGeo, new THREE.PointsMaterial({ color: 0xB88A44, size: 0.07, transparent: true, opacity: 0.5 })));
+
+  let t = 0;
+  function animate() {
+    requestAnimationFrame(animate);
+    t += 0.008;
+    wireframe.rotation.y = t * 0.5;
+    wireframe.rotation.x = t * 0.3;
+    solid.rotation.y = t * 0.5;
+    solid.rotation.x = t * 0.3;
+    ring.rotation.z = t * 0.2;
+    renderer.render(scene, camera);
+  }
+  animate();
+})();
+
+// ── THREE.JS DOCTOR CANVAS ──
+function initDoctorCanvas() {
+  const canvas = document.getElementById('canvas-doctor');
+  if (!canvas || canvas._initialized) return;
+  canvas._initialized = true;
+  const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(50, canvas.clientWidth / canvas.clientHeight, 0.1, 100);
+  camera.position.set(0, 0, 6);
+
+  // DNA helix-like structure
+  const helixGroup = new THREE.Group();
+  for (let i = 0; i < 60; i++) {
+    const t2 = (i / 60) * Math.PI * 6;
+    const r = 1.4;
+    const sphere1 = new THREE.Mesh(
+      new THREE.SphereGeometry(0.06, 8, 8),
+      new THREE.MeshBasicMaterial({ color: i % 3 === 0 ? 0xB88A44 : 0x1F4D3A, transparent: true, opacity: 0.7 })
+    );
+    sphere1.position.set(Math.cos(t2) * r, (i / 60) * 6 - 3, Math.sin(t2) * r);
+    helixGroup.add(sphere1);
+    const sphere2 = new THREE.Mesh(
+      new THREE.SphereGeometry(0.06, 8, 8),
+      new THREE.MeshBasicMaterial({ color: i % 3 === 0 ? 0x1F4D3A : 0xB88A44, transparent: true, opacity: 0.7 })
+    );
+    sphere2.position.set(-Math.cos(t2) * r, (i / 60) * 6 - 3, -Math.sin(t2) * r);
+    helixGroup.add(sphere2);
+  }
+  scene.add(helixGroup);
+
+  // Outer glow ring
+  const ring = new THREE.Mesh(
+    new THREE.TorusGeometry(2.5, 0.015, 8, 100),
+    new THREE.MeshBasicMaterial({ color: 0xB88A44, transparent: true, opacity: 0.2 })
+  );
+  scene.add(ring);
+
+  let t = 0;
+  function animate() {
+    requestAnimationFrame(animate);
+    t += 0.01;
+    helixGroup.rotation.y = t * 0.4;
+    ring.rotation.z = t * 0.15;
+    renderer.render(scene, camera);
+  }
+  animate();
+}
+
+// ── BOOKING SUBMIT ──
+function submitBooking() {
+  document.getElementById('confirmOverlay').classList.add('show');
+}
+</script>
+</body>
+</html>

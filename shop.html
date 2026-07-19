@@ -1,0 +1,1535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ayusiddha | Shop</title>
+  <meta name="description" content="Purchase doctor-formulated, organic Ayurvedic hair care, skin care, and pediatric wellness products. Inquire and checkout directly via WhatsApp.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* ── DESIGN SYSTEM VARIABLES ── */
+    :root {
+      --bg-warm-ivory: #F4EAE2;
+      --bg-warm-ivory-dark: #EBE0D7;
+      --color-forest-green: #1F4D3A;
+      --color-forest-green-rgb: 31, 77, 58;
+      --color-gold: #B88A44;
+      --color-gold-hover: #A37633;
+      --color-text-charcoal: #2F4038;
+      --color-border-beige: #DCCEBF;
+      --color-white: #FFFFFF;
+      --color-white-translucent: rgba(255, 255, 255, 0.8);
+      
+      --font-headings: 'Cormorant Garamond', serif;
+      --font-body: 'Manrope', sans-serif;
+      
+      --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      --transition-quick: all 0.2s ease;
+      
+      --shadow-premium: 0 10px 40px -10px rgba(31, 77, 58, 0.08);
+      --shadow-premium-hover: 0 20px 50px -10px rgba(31, 77, 58, 0.15);
+      
+      --border-radius-card: 20px;
+      --border-radius-button: 12px;
+    }
+
+    /* ── BASE RESET & STYLING ── */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      outline: none;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg-warm-ivory);
+      color: var(--color-text-charcoal);
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    body {
+      font-family: var(--font-body);
+      line-height: 1.6;
+      overflow-x: hidden;
+      background-color: var(--bg-warm-ivory);
+    }
+
+    /* Scrollbar Style */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--bg-warm-ivory-dark);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: var(--color-border-beige);
+      border-radius: 5px;
+      border: 2px solid var(--bg-warm-ivory-dark);
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--color-gold);
+    }
+
+    /* ── TYPOGRAPHY ── */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-headings);
+      color: var(--color-forest-green);
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+
+    p {
+      color: var(--color-text-charcoal);
+      font-size: 1.125rem;
+      font-weight: 400;
+      line-height: 1.75;
+      margin-bottom: 24px;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: var(--transition-quick);
+    }
+
+    /* ── LAYOUT UTILITIES ── */
+    .container {
+      max-width: 100%;
+      padding: 0 80px;
+      position: relative;
+    }
+
+    .section {
+      padding: 100px 0;
+      position: relative;
+    }
+
+    .section-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .section-eyebrow-line {
+      width: 28px;
+      height: 1px;
+      background-color: var(--color-gold);
+    }
+
+    .section-eyebrow span {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--color-gold);
+    }
+
+    .section-title {
+      font-size: clamp(2.5rem, 4.5vw, 3.5rem);
+      line-height: 1.15;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+
+    /* ── BUTTONS ── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px 36px;
+      font-family: var(--font-body);
+      font-size: 1.0625rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      border-radius: var(--border-radius-button);
+      cursor: pointer;
+      transition: var(--transition-smooth);
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background-color: var(--color-forest-green);
+      color: var(--color-white);
+      box-shadow: 0 4px 15px rgba(31, 77, 58, 0.15);
+    }
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 25px rgba(31, 77, 58, 0.25);
+      background-color: #173d2d;
+    }
+    .btn-secondary {
+      background-color: transparent;
+      border-color: var(--color-forest-green);
+      color: var(--color-forest-green);
+    }
+    .btn-secondary:hover {
+      background-color: var(--color-forest-green);
+      color: var(--color-white);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 25px rgba(31, 77, 58, 0.15);
+    }
+
+    /* ── HEADER ── */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background-color: rgba(244, 234, 226, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(220, 206, 191, 0.4);
+      transition: var(--transition-smooth);
+    }
+    header.scrolled {
+      padding: 10px 0;
+      box-shadow: 0 10px 30px rgba(31, 77, 58, 0.04);
+      background-color: rgba(244, 234, 226, 0.95);
+    }
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 90px;
+      transition: var(--transition-smooth);
+    }
+    header.scrolled .nav-container { height: 70px; }
+    .logo-wrap { display: flex; align-items: center; gap: 12px; }
+    .logo-img { height: 48px; width: auto; transition: var(--transition-smooth); }
+    header.scrolled .logo-img { height: 40px; }
+    .logo-wordmark {
+      height: 28px;
+      width: auto;
+      transition: var(--transition-smooth);
+      opacity: 0.5;
+    }
+    header.scrolled .logo-wordmark { height: 22px; }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      list-style: none;
+      margin-left: auto;
+      margin-right: 40px;
+    }
+    .nav-links a {
+      font-size: 0.9375rem;
+      font-weight: 500;
+      color: var(--color-text-charcoal);
+      position: relative;
+      padding: 6px 0;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background-color: var(--color-gold);
+      transition: var(--transition-smooth);
+    }
+    .nav-links a:hover { color: var(--color-forest-green); }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-links a.active { color: var(--color-forest-green); }
+    .nav-links a.active::after { width: 100%; }
+    .header-cta { display: flex; align-items: center; gap: 20px; }
+    .header-cta .btn { padding: 10px 24px; font-size: 0.9375rem; border-radius: 10px; }
+    
+    /* Cart Indicator */
+    .cart-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-forest-green);
+      transition: var(--transition-quick);
+      padding: 8px;
+    }
+    .cart-btn:hover {
+      color: var(--color-gold);
+    }
+    .cart-btn svg {
+      width: 26px;
+      height: 26px;
+    }
+    .cart-count {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-color: var(--color-gold);
+      color: var(--color-white);
+      font-size: 0.75rem;
+      font-weight: 700;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: popScale 0.3s ease;
+    }
+    @keyframes popScale {
+      from { transform: scale(0.5); }
+      to { transform: scale(1); }
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 26px;
+      height: 18px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      z-index: 1002;
+    }
+    .menu-toggle span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: var(--color-forest-green);
+      transition: var(--transition-smooth);
+      border-radius: 2px;
+    }
+
+    /* ── PAGE BANNER ── */
+    .page-banner {
+      background-color: var(--bg-warm-ivory-dark);
+      padding: 180px 0 100px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* ── SHOP CONTROLS ── */
+    .shop-controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 48px;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .filter-tabs {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .filter-tab {
+      background-color: transparent;
+      border: 1px solid var(--color-border-beige);
+      color: var(--color-text-charcoal);
+      font-family: var(--font-body);
+      font-size: 0.875rem;
+      font-weight: 500;
+      padding: 10px 24px;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+    .filter-tab:hover {
+      border-color: var(--color-forest-green);
+      color: var(--color-forest-green);
+    }
+    .filter-tab.active {
+      background-color: var(--color-forest-green);
+      border-color: var(--color-forest-green);
+      color: var(--color-white);
+      box-shadow: 0 4px 15px rgba(31, 77, 58, 0.1);
+    }
+
+    /* ── PRODUCT GRID ── */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+    }
+
+    .product-card {
+      background-color: var(--bg-warm-ivory);
+      border: 1px solid var(--color-border-beige);
+      border-radius: var(--border-radius-card);
+      padding: 24px;
+      transition: var(--transition-smooth);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-premium-hover);
+      border-color: var(--color-gold);
+    }
+
+    /* Tag badge */
+    .product-badge {
+      position: absolute;
+      top: 24px;
+      left: 24px;
+      background-color: var(--color-gold);
+      color: var(--color-white);
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 6px 12px;
+      border-radius: 20px;
+      z-index: 5;
+    }
+
+    /* Apothecary bottle mockup */
+    .product-visual-wrap {
+      aspect-ratio: 1/1;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(235, 224, 215, 0.4) 0%, rgba(220, 206, 191, 0.3) 100%);
+      margin-bottom: 24px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(220, 206, 191, 0.2);
+    }
+    .product-visual-svg {
+      width: 50%;
+      height: auto;
+      filter: drop-shadow(0 10px 20px rgba(31, 77, 58, 0.15));
+      transition: var(--transition-smooth);
+    }
+    .product-card:hover .product-visual-svg {
+      transform: scale(1.06) rotate(2deg);
+    }
+
+    .product-details {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    .product-category {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-gold);
+      margin-bottom: 6px;
+    }
+    .product-name {
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+      line-height: 1.25;
+    }
+    .product-size {
+      font-size: 0.875rem;
+      opacity: 0.75;
+      margin-bottom: 16px;
+    }
+    .product-desc {
+      font-size: 0.9375rem;
+      opacity: 0.85;
+      line-height: 1.6;
+      margin-bottom: 24px;
+      flex-grow: 1;
+    }
+    .product-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: auto;
+      border-top: 1px solid rgba(220, 206, 191, 0.4);
+      padding-top: 20px;
+    }
+    .product-price {
+      font-family: var(--font-headings);
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: var(--color-forest-green);
+    }
+    .add-to-cart-btn {
+      background-color: var(--color-forest-green);
+      border: none;
+      color: var(--color-white);
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-family: var(--font-body);
+      font-size: 0.875rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .add-to-cart-btn:hover {
+      background-color: var(--color-gold);
+      transform: translateY(-2px);
+    }
+
+    /* ── CART SLIDE-OUT PANEL ── */
+    .cart-panel {
+      position: fixed;
+      top: 0;
+      right: -420px;
+      width: 100%;
+      max-width: 420px;
+      height: 100vh;
+      background-color: var(--bg-warm-ivory);
+      box-shadow: -15px 0 40px rgba(31, 77, 58, 0.15);
+      z-index: 2000;
+      transition: var(--transition-smooth);
+      display: flex;
+      flex-direction: column;
+      border-left: 1px solid var(--color-border-beige);
+    }
+    .cart-panel.open {
+      right: 0;
+    }
+    .cart-header {
+      padding: 24px 32px;
+      border-bottom: 1px solid var(--color-border-beige);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: var(--bg-warm-ivory-dark);
+    }
+    .cart-header h3 {
+      font-size: 1.625rem;
+    }
+    .close-cart-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--color-forest-green);
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6px;
+    }
+    .cart-items-wrap {
+      flex-grow: 1;
+      overflow-y: auto;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    
+    /* Cart Item Card */
+    .cart-item {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--color-border-beige);
+    }
+    .cart-item-visual {
+      width: 60px;
+      height: 60px;
+      border-radius: 8px;
+      background-color: var(--bg-warm-ivory-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .cart-item-visual svg {
+      width: 32px;
+      height: 32px;
+      color: var(--color-forest-green);
+    }
+    .cart-item-info {
+      flex-grow: 1;
+    }
+    .cart-item-name {
+      font-size: 1.0625rem;
+      font-weight: 600;
+      color: var(--color-forest-green);
+      margin-bottom: 2px;
+    }
+    .cart-item-size {
+      font-size: 0.8125rem;
+      opacity: 0.7;
+      margin-bottom: 8px;
+    }
+    .cart-item-controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .qty-controls {
+      display: flex;
+      align-items: center;
+      border: 1px solid var(--color-border-beige);
+      border-radius: 6px;
+      background-color: var(--color-white);
+    }
+    .qty-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px 10px;
+      font-size: 0.875rem;
+      color: var(--color-forest-green);
+      font-weight: bold;
+    }
+    .qty-value {
+      font-size: 0.875rem;
+      font-weight: 600;
+      padding: 0 8px;
+    }
+    .cart-item-price {
+      font-weight: 600;
+      color: var(--color-forest-green);
+      font-size: 0.9375rem;
+    }
+    .delete-item-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #b22222;
+      opacity: 0.6;
+      transition: var(--transition-quick);
+      padding: 4px;
+    }
+    .delete-item-btn:hover {
+      opacity: 1;
+    }
+    .delete-item-btn svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .cart-empty {
+      text-align: center;
+      padding: 60px 0;
+      color: var(--color-text-charcoal);
+      opacity: 0.6;
+    }
+    .cart-empty svg {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 16px;
+      color: var(--color-border-beige);
+    }
+
+    .cart-footer {
+      padding: 32px;
+      background-color: var(--bg-warm-ivory-dark);
+      border-top: 1px solid var(--color-border-beige);
+    }
+    .cart-summary-line {
+      display: flex;
+      justify-content: space-between;
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin-bottom: 24px;
+      color: var(--color-forest-green);
+    }
+    .checkout-btn {
+      width: 100%;
+      background-color: var(--color-forest-green);
+      color: var(--color-white);
+      border: none;
+      padding: 16px 0;
+      border-radius: var(--border-radius-button);
+      font-family: var(--font-body);
+      font-size: 1.0625rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    .checkout-btn:hover {
+      background-color: #173d2d;
+      transform: translateY(-2px);
+    }
+    .checkout-btn svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .cart-overlay {
+      position: fixed;
+      inset: 0;
+      background-color: rgba(31, 77, 58, 0.4);
+      backdrop-filter: blur(4px);
+      z-index: 1999;
+      opacity: 0;
+      pointer-events: none;
+      transition: var(--transition-smooth);
+    }
+    .cart-overlay.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background-color: #173226;
+      padding: 100px 0 40px;
+      color: rgba(244, 234, 226, 0.75);
+      border-top: 1px solid rgba(220, 206, 191, 0.1);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+      gap: 60px;
+      margin-bottom: 80px;
+    }
+    .footer-logo-wrap { margin-bottom: 28px; }
+    .footer-logo-wordmark { height: 24px; width: auto; }
+    .footer-desc { font-size: 0.9375rem; line-height: 1.65; margin-bottom: 24px; color: rgba(244, 234, 226, 0.75); }
+    footer p { color: rgba(244, 234, 226, 0.75); }
+    footer strong { color: var(--color-gold); }
+    .footer-quote { font-family: var(--font-headings); font-size: 1.125rem; font-style: italic; color: var(--color-gold); }
+    .footer-col h3 {
+      color: var(--color-gold);
+      font-family: var(--font-body);
+      font-size: 0.8125rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      margin-bottom: 28px;
+    }
+    .footer-links-list { list-style: none; display: flex; flex-direction: column; gap: 16px; }
+    .footer-links-list a { font-size: 0.9375rem; color: rgba(244, 234, 226, 0.7); transition: var(--transition-quick); }
+    .footer-links-list a:hover { color: var(--color-white); padding-left: 4px; }
+    .footer-contact-info { font-size: 0.9375rem; line-height: 1.6; }
+    .footer-contact-info p { color: rgba(244, 234, 226, 0.7); margin-bottom: 16px; }
+    .footer-contact-label { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-gold); margin-bottom: 4px; }
+    .footer-bottom {
+      border-top: 1px solid rgba(244, 234, 226, 0.08);
+      padding-top: 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .footer-copy { font-size: 0.8125rem; }
+    .footer-meta { font-size: 0.8125rem; font-weight: 500; color: var(--color-white); }
+    .footer-disclaimer { width: 100%; border-top: 1px solid rgba(244, 234, 226, 0.08); margin-top: 40px; padding-top: 24px; font-size: 0.75rem; line-height: 1.6; opacity: 0.6; text-align: justify; }
+
+    /* ── FLOATING WHATSAPP BUTTON ── */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 40px;
+      right: 40px;
+      width: 60px;
+      height: 60px;
+      background-color: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-white);
+      z-index: 999;
+      box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+    .whatsapp-float svg { width: 32px; height: 32px; }
+
+    /* ── ANIMATION REVEAL ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .mobile-cta-li { display: none; }
+    .mobile-break { display: none; }
+    .desktop-separator { display: inline; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .container { padding: 0 32px; }
+      .section { padding: 80px 0; }
+      .product-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: repeat(2, 1fr); gap: 40px; }
+
+      /* Mobile Navigation rules moved to activate at 1024px */
+      .nav-container {
+        position: relative;
+      }
+      .logo-wrap {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        margin: 0;
+        padding: 0;
+        z-index: 10;
+      }
+      .logo-wordmark {
+        display: none !important;
+      }
+      .header-cta {
+        display: flex !important;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+      }
+      .header-cta .btn {
+        display: none !important;
+      }
+      .menu-toggle {
+        display: flex;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1002;
+      }
+      .nav-links .mobile-cta-li {
+        display: block;
+        width: 100%;
+        margin-top: 10px;
+      }
+      .footer-meta {
+        display: none;
+      }
+      .collapsible-footer-col h3 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+      }
+      .collapsible-footer-col h3::after {
+        display: inline-block;
+        content: '▼';
+        font-size: 0.7rem;
+        margin-left: 8px;
+        transition: transform 0.2s ease;
+        color: var(--color-gold);
+      }
+      .collapsible-footer-col.active h3::after {
+        transform: rotate(180deg);
+      }
+      .collapsible-footer-col .footer-links-list {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+      }
+      .collapsible-footer-col.active .footer-links-list {
+        max-height: 350px;
+      }
+      .mobile-break {
+        display: block;
+        margin-top: 8px;
+      }
+      .desktop-separator {
+        display: none;
+      }
+      .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        max-width: 320px;
+        height: 100vh;
+        background-color: var(--bg-warm-ivory);
+        box-shadow: -10px 0 40px rgba(31, 77, 58, 0.15);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 32px;
+        transition: var(--transition-smooth);
+        z-index: 1001;
+        border-left: 1px solid var(--color-border-beige);
+        padding: 40px;
+        margin-left: 0;
+        margin-right: 0;
+      }
+      .nav-links.active { right: 0; }
+      .header-cta { display: none; }
+      .nav-links .mobile-cta-li {
+        display: block;
+        width: 100%;
+        margin-top: 10px;
+      }
+      .nav-links .mobile-cta-li a.btn {
+        color: var(--color-white) !important;
+        padding: 12px 24px !important;
+        font-size: 0.9375rem !important;
+        font-weight: 500 !important;
+        border-radius: 10px !important;
+        display: inline-flex !important;
+        background-color: var(--color-forest-green) !important;
+        box-shadow: 0 4px 15px rgba(31, 77, 58, 0.15) !important;
+        text-align: center;
+        width: 100%;
+        justify-content: center;
+        box-sizing: border-box;
+      }
+      .nav-links .mobile-cta-li a.btn::after {
+        display: none !important;
+      }
+      .menu-toggle.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+      .menu-toggle.active span:nth-child(2) { opacity: 0; }
+      .menu-toggle.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+    }
+    @media (max-width: 768px) {
+      .product-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+    }
+    @media (max-width: 480px) {
+      .container { padding: 0 20px; }
+      .whatsapp-float { bottom: 24px; right: 24px; width: 50px; height: 50px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── HEADER / NAVIGATION ── -->
+  <header id="header">
+    <div class="container">
+      <nav class="nav-container">
+        <a href="index.html" class="logo-wrap" aria-label="Ayusiddha Home">
+          <img src="logo.svg" alt="Ayusiddha" class="logo-img">
+          <img src="Wordmark.svg" alt="Ayusiddha" class="logo-wordmark">
+        </a>
+        
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="shop.html" class="active">Shop</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li class="mobile-cta-li">
+            <a href="consultations.html" class="btn btn-primary">Book Consultation</a>
+          </li>
+        </ul>
+        
+        <div class="header-cta">
+          <!-- Cart Button -->
+          <button class="cart-btn" onclick="toggleCart()" aria-label="View Shopping Cart">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+            </svg>
+            <span class="cart-count" id="cartCount" style="display: none;">0</span>
+          </button>
+          <a href="consultations.html" class="btn btn-primary">Book Consultation</a>
+        </div>
+        
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ── PAGE BANNER ── -->
+  <section class="page-banner">
+    <div class="container">
+      <div class="reveal">
+        <div class="section-eyebrow">
+          <div class="section-eyebrow-line"></div>
+          <span>Herbal Store · आयुर्वेदिक दुकान</span>
+        </div>
+        <h1 class="section-title">Classical Formulations</h1>
+        <p class="section-subtitle" style="margin-top: 16px; max-width: 680px;">Prepared from organically sourced herbs. Every product follows classical Ayurvedic pharmacopoeia standards — no artificial additives, no shortcuts.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PRODUCT LISTING ── -->
+  <section class="section" style="padding-top: 60px;">
+    <div class="container">
+      
+      <!-- Filters and search -->
+      <div class="shop-controls reveal">
+        <div class="filter-tabs">
+          <button class="filter-tab active" onclick="filterCategory('all', event)">All Offerings</button>
+          <button class="filter-tab" onclick="filterCategory('hair', event)">Hair Care</button>
+          <button class="filter-tab" onclick="filterCategory('skin', event)">Skin Care</button>
+          <button class="filter-tab" onclick="filterCategory('wellness', event)">Pediatric Wellness</button>
+        </div>
+      </div>
+
+      <!-- Product Grid -->
+      <div class="product-grid">
+        
+        <!-- Product 1: Best Hair Care Combo -->
+        <div class="product-card" data-category="hair">
+          <span class="product-badge">Best Combo</span>
+          <div class="product-visual-wrap">
+            <svg class="product-visual-svg" viewBox="0 0 100 120" fill="none">
+              <rect x="25" y="45" width="22" height="60" rx="3" fill="#1F4D3A" opacity="0.8"/>
+              <rect x="32" y="30" width="8" height="15" fill="#B88A44"/>
+              <rect x="53" y="35" width="22" height="70" rx="3" fill="#1F4D3A"/>
+              <rect x="60" y="20" width="8" height="15" fill="#B88A44"/>
+              <path d="M50,75 Q60,65 50,55 Q40,65 50,75 Z" fill="#B88A44" opacity="0.3"/>
+            </svg>
+          </div>
+          <div class="product-details">
+            <span class="product-category">Hair Care Combo</span>
+            <h3 class="product-name">Best Hair Care Combo</h3>
+            <span class="product-size">Shampoo (200ml) & Hair Oil (100ml)</span>
+            <p class="product-desc">
+              A powerful 2-step Ayurvedic solution designed to control hair fall, strengthen roots, and restore natural shine. Combines our clarifying shampoo with deep root-nourishing hair oil.
+            </p>
+            <div class="product-footer">
+              <span class="product-price">₹630</span>
+              <button class="add-to-cart-btn" onclick="addToCart('p1', 'Best Hair Care Combo', 630, 'Shampoo + Hair Oil')">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 2: Herbal Shampoo -->
+        <div class="product-card" data-category="hair">
+          <div class="product-visual-wrap">
+            <svg class="product-visual-svg" viewBox="0 0 100 120" fill="none">
+              <rect x="35" y="40" width="30" height="70" rx="4" fill="#1F4D3A"/>
+              <rect x="44" y="22" width="12" height="18" fill="#B88A44"/>
+              <circle cx="50" cy="75" r="14" fill="#EBE0D7" opacity="0.2"/>
+              <path d="M47,75 L53,75 M50,72 L50,78" stroke="#B88A44" stroke-width="1.5"/>
+            </svg>
+          </div>
+          <div class="product-details">
+            <span class="product-category">Hair Care</span>
+            <h3 class="product-name">Herbal Shampoo</h3>
+            <span class="product-size">200ml Bottle</span>
+            <p class="product-desc">
+              Gently removes dirt, excess oil, and buildup while maintaining the scalp’s natural pH and moisture balance. Prevents dryness, keeping strands soft and manageable.
+            </p>
+            <div class="product-footer">
+              <span class="product-price">₹250</span>
+              <button class="add-to-cart-btn" onclick="addToCart('p2', 'Herbal Shampoo', 250, '200ml')">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 3: Herbal Hair Oil -->
+        <div class="product-card" data-category="hair">
+          <div class="product-visual-wrap">
+            <svg class="product-visual-svg" viewBox="0 0 100 120" fill="none">
+              <rect x="36" y="45" width="28" height="65" rx="4" fill="#1F4D3A" opacity="0.9"/>
+              <path d="M44,45 L44,25 L56,25 L56,45 Z" fill="#B88A44"/>
+              <circle cx="50" cy="77" r="10" fill="none" stroke="#B88A44" stroke-width="1.5"/>
+              <path d="M50,72 Q54,77 50,82 Q46,77 50,72 Z" fill="#B88A44"/>
+            </svg>
+          </div>
+          <div class="product-details">
+            <span class="product-category">Hair Care</span>
+            <h3 class="product-name">Herbal Hair Oil</h3>
+            <span class="product-size">100ml Bottle</span>
+            <p class="product-desc">
+              Deeply nourishing root treatment. Formulated to relieve itching, premature greying, stubborn dandruff, scalp psoriasis, and address postpartum, male, and female hair thinning.
+            </p>
+            <div class="product-footer">
+              <span class="product-price">₹380</span>
+              <button class="add-to-cart-btn" onclick="addToCart('p3', 'Herbal Hair Oil', 380, '100ml')">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 4: Hair Growth Serum -->
+        <div class="product-card" data-category="hair">
+          <span class="product-badge">All New</span>
+          <div class="product-visual-wrap">
+            <svg class="product-visual-svg" viewBox="0 0 100 120" fill="none">
+              <rect x="38" y="50" width="24" height="60" rx="3" fill="#1F4D3A"/>
+              <rect x="46" y="32" width="8" height="18" fill="#B88A44"/>
+              <path d="M43,32 Q50,22 57,32" stroke="#B88A44" stroke-width="1.5"/>
+              <circle cx="50" cy="80" r="8" fill="none" stroke="#B88A44" stroke-width="1"/>
+            </svg>
+          </div>
+          <div class="product-details">
+            <span class="product-category">Hair Care</span>
+            <h3 class="product-name">Hair Growth Serum</h3>
+            <span class="product-size">25ml Dropper</span>
+            <p class="product-desc">
+              A lightweight, non-greasy, potent formulation designed to reduce hair fall, stimulate blood circulation, activate dormant hair roots, and support faster, healthier growth.
+            </p>
+            <div class="product-footer">
+              <span class="product-price">₹450</span>
+              <button class="add-to-cart-btn" onclick="addToCart('p4', 'Hair Growth Serum', 450, '25ml')">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 5: SuvarnaPrashan Drops -->
+        <div class="product-card" data-category="wellness">
+          <span class="product-badge">Best Seller</span>
+          <div class="product-visual-wrap">
+            <svg class="product-visual-svg" viewBox="0 0 100 120" fill="none">
+              <rect x="36" y="45" width="28" height="65" rx="4" fill="#B88A44" opacity="0.3"/>
+              <rect x="38" y="48" width="24" height="59" rx="3" fill="#1F4D3A"/>
+              <rect x="45" y="28" width="10" height="20" fill="#B88A44"/>
+              <circle cx="50" cy="78" r="10" fill="none" stroke="#B88A44" stroke-width="1.5"/>
+              <path d="M50,72 L53,78 L47,78 Z" fill="#B88A44"/>
+            </svg>
+          </div>
+          <div class="product-details">
+            <span class="product-category">Pediatric Wellness</span>
+            <h3 class="product-name">SuvarnaPrashan Drops</h3>
+            <span class="product-size">25ml Dropper</span>
+            <p class="product-desc">
+              Classical Ayurvedic formulation enriched with Swarna (Gold) Bhasma, organic herbs, and medicated ghee. Formulated to support your child’s immunity, brain development, and growth.
+            </p>
+            <div class="product-footer">
+              <span class="product-price">₹1800</span>
+              <button class="add-to-cart-btn" onclick="addToCart('p5', 'SuvarnaPrashan Drops', 1800, '25ml')">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 6: Face Glow Serum -->
+        <div class="product-card" data-category="skin">
+          <span class="product-badge">New Launch</span>
+          <div class="product-visual-wrap">
+            <svg class="product-visual-svg" viewBox="0 0 100 120" fill="none">
+              <rect x="38" y="50" width="24" height="60" rx="3" fill="#1F4D3A" opacity="0.85"/>
+              <rect x="46" y="32" width="8" height="18" fill="#B88A44"/>
+              <circle cx="50" cy="80" r="6" fill="#B88A44" opacity="0.5"/>
+            </svg>
+          </div>
+          <div class="product-details">
+            <span class="product-category">Skin Care</span>
+            <h3 class="product-name">Face Glow Serum</h3>
+            <span class="product-size">25ml Dropper</span>
+            <p class="product-desc">
+              Lightweight serum formulated to deeply hydrate, brighten, improve texture, and reduce pigmentation. Nourishes deeply without leaving any greasy residue.
+            </p>
+            <div class="product-footer">
+              <span class="product-price">₹450</span>
+              <button class="add-to-cart-btn" onclick="addToCart('p6', 'Face Glow Serum', 450, '25ml')">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 7: Herbal Face Wash -->
+        <div class="product-card" data-category="skin">
+          <div class="product-visual-wrap">
+            <svg class="product-visual-svg" viewBox="0 0 100 120" fill="none">
+              <path d="M35,110 L65,110 L60,40 L40,40 Z" fill="#EBE0D7" stroke="#1F4D3A" stroke-width="2"/>
+              <rect x="44" y="24" width="12" height="16" fill="#B88A44"/>
+            </svg>
+          </div>
+          <div class="product-details">
+            <span class="product-category">Skin Care</span>
+            <h3 class="product-name">Herbal Face Wash</h3>
+            <span class="product-size">200ml Tube</span>
+            <p class="product-desc">
+              Removes dirt, sweat, and excess oil from pores while maintaining your skin's natural moisture mantle. Keeps the face fresh, soft, and balanced.
+            </p>
+            <div class="product-footer">
+              <span class="product-price">₹280</span>
+              <button class="add-to-cart-btn" onclick="addToCart('p7', 'Herbal Face Wash', 280, '200ml')">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 8: Kumkumadi Ghrita -->
+        <div class="product-card" data-category="skin">
+          <div class="product-visual-wrap">
+            <svg class="product-visual-svg" viewBox="0 0 100 120" fill="none">
+              <rect x="30" y="55" width="40" height="50" rx="10" fill="#1F4D3A"/>
+              <rect x="25" y="45" width="50" height="10" rx="3" fill="#B88A44"/>
+              <circle cx="50" cy="80" r="10" fill="none" stroke="#B88A44" stroke-width="1"/>
+            </svg>
+          </div>
+          <div class="product-details">
+            <span class="product-category">Skin Care</span>
+            <h3 class="product-name">Kumkumadi Ghrita</h3>
+            <span class="product-size">30g Jar</span>
+            <p class="product-desc">
+              Traditional medicated ghee formulation. Enhances natural glow, reduces hyperpigmentation, and promotes an even-toned, radiant complexion.
+            </p>
+            <div class="product-footer">
+              <span class="product-price">₹450</span>
+              <button class="add-to-cart-btn" onclick="addToCart('p8', 'Kumkumadi Ghrita', 450, '30g')">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 9: Shatadhaut Ghrita -->
+        <div class="product-card" data-category="skin">
+          <div class="product-visual-wrap">
+            <svg class="product-visual-svg" viewBox="0 0 100 120" fill="none">
+              <rect x="30" y="55" width="40" height="50" rx="10" fill="#1F4D3A" opacity="0.8"/>
+              <rect x="25" y="45" width="50" height="10" rx="3" fill="#B88A44"/>
+              <path d="M45,75 Q50,70 55,75" stroke="#B88A44" stroke-width="1.5"/>
+            </svg>
+          </div>
+          <div class="product-details">
+            <span class="product-category">Skin Care</span>
+            <h3 class="product-name">Shatadhaut Ghrita</h3>
+            <span class="product-size">30g Jar</span>
+            <p class="product-desc">
+              100-times washed clarified butter. Deeply cools, hydrates, and repairs sensitive, irritated, or damaged skin layers naturally.
+            </p>
+            <div class="product-footer">
+              <span class="product-price">₹380</span>
+              <button class="add-to-cart-btn" onclick="addToCart('p9', 'Shatadhaut Ghrita', 380, '30g')">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 10: Acne Cream -->
+        <div class="product-card" data-category="skin">
+          <div class="product-visual-wrap">
+            <svg class="product-visual-svg" viewBox="0 0 100 120" fill="none">
+              <rect x="32" y="55" width="36" height="50" rx="8" fill="#1F4D3A"/>
+              <rect x="28" y="45" width="44" height="10" rx="2" fill="#B88A44"/>
+              <circle cx="50" cy="80" r="8" fill="none" stroke="#EBE0D7" opacity="0.3" stroke-width="1"/>
+            </svg>
+          </div>
+          <div class="product-details">
+            <span class="product-category">Skin Care</span>
+            <h3 class="product-name">Acne Cream</h3>
+            <span class="product-size">30g Jar</span>
+            <p class="product-desc">
+              Targets acne and breakouts at the root level. Contains antimicrobial herbs to provide clear, calm, and healthy skin.
+            </p>
+            <div class="product-footer">
+              <span class="product-price">₹380</span>
+              <button class="add-to-cart-btn" onclick="addToCart('p10', 'Acne Cream', 380, '30g')">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 11: Herbal Detan Soap -->
+        <div class="product-card" data-category="skin">
+          <div class="product-visual-wrap">
+            <svg class="product-visual-svg" viewBox="0 0 100 120" fill="none">
+              <rect x="25" y="45" width="50" height="40" rx="6" fill="#B88A44" opacity="0.8"/>
+              <rect x="28" y="48" width="44" height="34" rx="4" fill="#1F4D3A"/>
+            </svg>
+          </div>
+          <div class="product-details">
+            <span class="product-category">Skin Care</span>
+            <h3 class="product-name">Herbal Detan Soap</h3>
+            <span class="product-size">100g Bar</span>
+            <p class="product-desc">
+              Gently removes sun tanning, dirt, and surface dullness. Restores natural skin brightness and texture.
+            </p>
+            <div class="product-footer">
+              <span class="product-price">₹120</span>
+              <button class="add-to-cart-btn" onclick="addToCart('p11', 'Herbal Detan Soap', 120, '100g')">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CART DRAWER PANEL ── -->
+  <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+  <div class="cart-panel" id="cartPanel">
+    <div class="cart-header">
+      <h3>Your Apothecary Cart</h3>
+      <button class="close-cart-btn" onclick="toggleCart()" aria-label="Close Shopping Cart">✕</button>
+    </div>
+    
+    <div class="cart-items-wrap" id="cartItemsContainer">
+      <!-- Cart items injected here via JS -->
+    </div>
+    
+    <div class="cart-footer">
+      <div class="cart-summary-line">
+        <span>Subtotal</span>
+        <span id="cartSubtotal">₹0</span>
+      </div>
+      <button class="checkout-btn" onclick="checkoutWhatsApp()">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 11.944.01c3.17 0 6.15 1.235 8.39 3.479 2.24 2.24 3.473 5.224 3.47 8.395-.006 6.544-5.342 11.884-11.89 11.884-.198 0-.396-.002-.594-.006a11.82 11.82 0 01-5.69-1.488L0 24zm6.305-1.654a9.87 9.87 0 005.69 1.448h.005c5.448 0 9.882-4.436 9.885-9.89a9.825 9.825 0 00-2.893-6.994c-1.867-1.868-4.35-2.898-6.993-2.898-5.45 0-9.885 4.434-9.888 9.884a9.86 9.86 0 001.51 5.26l.235.374-1.002 3.65 3.74-.984.363.216a9.87 9.87 0 005.031 1.383zm11.11-7.002c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+        </svg>
+        Checkout via WhatsApp
+      </button>
+    </div>
+  </div>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-logo-wrap">
+            <img src="Wordmark_gold.svg" alt="Ayusiddha" class="footer-logo-wordmark">
+          </div>
+          <p class="footer-desc">
+            Ayusiddha represents premium, doctor-led clinical Ayurvedic medicine. We restore biological balance and address metabolic, hormonal, skin, and hair disorders from their roots.
+          </p>
+          <div class="footer-quote">
+            "आयुर्वेदं अमृतम् — Ayurveda is immortality"
+          </div>
+        </div>
+        
+        <div class="footer-col collapsible-footer-col">
+          <h3>Quick Navigation</h3>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Home Base</a></li>
+            <li><a href="about.html">About the Doctor</a></li>
+            <li><a href="services.html">Our Core Services</a></li>
+            <li><a href="shop.html">The Apothecary</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col collapsible-footer-col">
+          <h3>Clinical Specialties</h3>
+          <ul class="footer-links-list">
+            <li><a href="services.html">Panchakarma Detox</a></li>
+            <li><a href="services.html">Abhyanga Massage</a></li>
+            <li><a href="services.html">Shirodhara Therapy</a></li>
+            <li><a href="services.html">Hair Loss Treatment</a></li>
+            <li><a href="services.html">Skin Wellness Care</a></li>
+            <li><a href="services.html">PCOS & Cyst Balance</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Contact & Info</h3>
+          <div class="footer-contact-info">
+            <span class="footer-contact-label">Secure Bookings</span>
+            <p>Video consultations scheduled via Calendly.</p>
+            
+            <span class="footer-contact-label">WhatsApp Helpline</span>
+            <p><a href="tel:+918302898820" style="color: var(--color-white); font-weight: 500;">+91 83028 98820</a></p>
+            
+            <span class="footer-contact-label">Email Assistance</span>
+            <p><a href="mailto:help.ayusiddha@gmail.com" style="color: var(--color-white);">help.ayusiddha@gmail.com</a></p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <div class="footer-copy">
+          &copy; 2026 Ayusiddha | All rights reserved.<span class="desktop-separator"> | </span><br class="mobile-break">Designed with ❤️ for healing
+        </div>
+        <div class="footer-meta">
+          Dr. Monali Pawar (BAMS, MD - Panchakarma) · Registered Medical Practitioner
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ── FLOATING WHATSAPP BUTTON ── -->
+  <div class="whatsapp-float" onclick="window.open('https://wa.me/918302898820?text=Hello%20Dr.%20Monali,%20I%20would%20like%20to%20inquire%20about%20an%20Ayurvedic%20consultation.', '_blank')" title="Chat with Dr. Monali on WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </div>
+
+  <!-- ── JAVASCRIPT ── -->
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    menuToggle.addEventListener('click', () => {
+      menuToggle.classList.toggle('active');
+      navLinks.classList.toggle('active');
+    });
+    window.addEventListener('scroll', () => {
+      const header = document.getElementById('header');
+      if (window.scrollY > 40) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('active');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+      loadCart();
+
+      // Footer Collapsible Accordion on Mobile
+      document.querySelectorAll('.collapsible-footer-col h3').forEach(heading => {
+        heading.addEventListener('click', () => {
+          if (window.innerWidth <= 1024) {
+            heading.parentElement.classList.toggle('active');
+          }
+        });
+      });
+    });
+
+    /* ── FILTERING LOGIC ── */
+    function filterCategory(category, event) {
+      document.querySelectorAll('.filter-tab').forEach(tab => tab.classList.remove('active'));
+      
+      const currentEvent = event || window.event;
+      if (currentEvent && currentEvent.currentTarget) {
+        currentEvent.currentTarget.classList.add('active');
+      }
+      
+      const cards = document.querySelectorAll('.product-card');
+      cards.forEach(card => {
+        if (category === 'all' || card.getAttribute('data-category') === category) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    /* ── CART LOGIC ── */
+    let cart = [];
+
+    function toggleCart() {
+      document.getElementById('cartPanel').classList.toggle('open');
+      document.getElementById('cartOverlay').classList.toggle('open');
+    }
+
+    function addToCart(id, name, price, size) {
+      const existing = cart.find(item => item.id === id);
+      if (existing) {
+        existing.quantity += 1;
+      } else {
+        cart.push({ id, name, price, size, quantity: 1 });
+      }
+      saveCart();
+      renderCart();
+      
+      // Open cart drawer immediately on add for visual feedback
+      document.getElementById('cartPanel').classList.add('open');
+      document.getElementById('cartOverlay').classList.add('open');
+    }
+
+    function changeQty(id, delta) {
+      const item = cart.find(item => item.id === id);
+      if (!item) return;
+      item.quantity += delta;
+      if (item.quantity <= 0) {
+        cart = cart.filter(i => i.id !== id);
+      }
+      saveCart();
+      renderCart();
+    }
+
+    function deleteItem(id) {
+      cart = cart.filter(i => i.id !== id);
+      saveCart();
+      renderCart();
+    }
+
+    function saveCart() {
+      localStorage.setItem('ayusiddha_cart', JSON.stringify(cart));
+    }
+
+    function loadCart() {
+      const saved = localStorage.getItem('ayusiddha_cart');
+      if (saved) {
+        try {
+          cart = JSON.parse(saved);
+        } catch (e) {
+          cart = [];
+        }
+      }
+      renderCart();
+    }
+
+    function renderCart() {
+      const container = document.getElementById('cartItemsContainer');
+      const countIndicator = document.getElementById('cartCount');
+      const subtotalEl = document.getElementById('cartSubtotal');
+      
+      container.innerHTML = '';
+      
+      let totalQty = 0;
+      let subtotal = 0;
+      
+      if (cart.length === 0) {
+        container.innerHTML = `
+          <div class="cart-empty">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+            </svg>
+            <p>Your apothecary cart is empty.</p>
+          </div>
+        `;
+        countIndicator.style.display = 'none';
+      } else {
+        cart.forEach(item => {
+          totalQty += item.quantity;
+          subtotal += item.price * item.quantity;
+          
+          const itemEl = document.createElement('div');
+          itemEl.className = 'cart-item';
+          itemEl.innerHTML = `
+            <div class="cart-item-visual">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547"/>
+              </svg>
+            </div>
+            <div class="cart-item-info">
+              <div class="cart-item-name">${item.name}</div>
+              <div class="cart-item-size">${item.size}</div>
+              <div class="cart-item-controls">
+                <div class="qty-controls">
+                  <button class="qty-btn" onclick="changeQty('${item.id}', -1)">-</button>
+                  <span class="qty-value">${item.quantity}</span>
+                  <button class="qty-btn" onclick="changeQty('${item.id}', 1)">+</button>
+                </div>
+                <div class="cart-item-price">₹${item.price * item.quantity}</div>
+                <button class="delete-item-btn" onclick="deleteItem('${item.id}')" aria-label="Delete item">
+                  <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          `;
+          container.appendChild(itemEl);
+        });
+        
+        countIndicator.textContent = totalQty;
+        countIndicator.style.display = 'flex';
+      }
+      
+      subtotalEl.textContent = `₹${subtotal}`;
+    }
+
+    function checkoutWhatsApp() {
+      if (cart.length === 0) return;
+      
+      let message = "Namaste Ayusiddha Team, I would like to place an order for the following Ayurvedic formulations:\n\n";
+      let total = 0;
+      
+      cart.forEach(item => {
+        message += `• ${item.name} (${item.size}) x ${item.quantity} — ₹${item.price * item.quantity}\n`;
+        total += item.price * item.quantity;
+      });
+      
+      message += `\n*Total Amount: ₹${total}*\n\nPlease confirm product availability and provide payment details (UPI/Bank Transfer). Thank you!`;
+      
+      const encodedMsg = encodeURIComponent(message);
+      const url = `https://wa.me/918302898820?text=${encodedMsg}`;
+      window.open(url, '_blank');
+    }
+  </script>
+</body>
+</html>

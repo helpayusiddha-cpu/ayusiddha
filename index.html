@@ -1,0 +1,2962 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ayusiddha | Home</title>
+  <meta name="description" content="Experience authentic, doctor-led Ayurvedic consultations by Dr. Monali Pawar (BAMS, MD - Panchakarma). Personalised root-cause healing, Panchakarma therapies, and organic formulations.">
+  
+  <!-- Preconnect to Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Google Fonts: Cormorant Garamond & Manrope -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Three.js for hero particles -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  
+  <style>
+    /* ── DESIGN SYSTEM VARIABLES ── */
+    :root {
+      --bg-warm-ivory: #F4EAE2;
+      --bg-warm-ivory-dark: #EBE0D7;
+      --color-forest-green: #1F4D3A;
+      --color-forest-green-rgb: 31, 77, 58;
+      --color-gold: #B88A44;
+      --color-gold-hover: #A37633;
+      --color-text-charcoal: #2F4038;
+      --color-border-beige: #DCCEBF;
+      --color-white: #FFFFFF;
+      --color-white-translucent: rgba(255, 255, 255, 0.8);
+      
+      --font-headings: 'Cormorant Garamond', serif;
+      --font-body: 'Manrope', sans-serif;
+      
+      --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      --transition-quick: all 0.2s ease;
+      
+      --shadow-premium: 0 10px 40px -10px rgba(31, 77, 58, 0.08);
+      --shadow-premium-hover: 0 20px 50px -10px rgba(31, 77, 58, 0.15);
+      
+      --border-radius-card: 20px;
+      --border-radius-button: 12px;
+    }
+
+    /* ── BASE RESET & STYLING ── */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      outline: none;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg-warm-ivory);
+      color: var(--color-text-charcoal);
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    body {
+      font-family: var(--font-body);
+      line-height: 1.6;
+      overflow-x: hidden;
+      background-color: var(--bg-warm-ivory);
+    }
+
+    /* Selection Color */
+    ::-webkit-selection {
+      background-color: rgba(31, 77, 58, 0.1);
+      color: var(--color-forest-green);
+    }
+    ::selection {
+      background-color: rgba(31, 77, 58, 0.1);
+      color: var(--color-forest-green);
+    }
+
+    /* Scrollbar Style */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--bg-warm-ivory-dark);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: var(--color-border-beige);
+      border-radius: 5px;
+      border: 2px solid var(--bg-warm-ivory-dark);
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--color-gold);
+    }
+
+    /* ── TYPOGRAPHY ── */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-headings);
+      color: var(--color-forest-green);
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+
+    p {
+      color: var(--color-text-charcoal);
+      font-size: 1.125rem; /* 18px */
+      font-weight: 400;
+      line-height: 1.75;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: var(--transition-quick);
+    }
+
+    strong {
+      font-weight: 600;
+      color: var(--color-forest-green);
+    }
+
+    /* ── LAYOUT UTILITIES ── */
+    .container {
+      max-width: 100%;
+      padding: 0 80px;
+      position: relative;
+    }
+
+    .section {
+      padding: 140px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .section-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .section-eyebrow-line {
+      width: 28px;
+      height: 1px;
+      background-color: var(--color-gold);
+    }
+
+    .section-eyebrow span {
+      font-size: 0.8125rem; /* 13px */
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--color-gold);
+    }
+
+    .section-title {
+      font-family: var(--font-headings);
+      font-size: clamp(2.5rem, 4.5vw, 3.5rem); /* 40px to 56px */
+      line-height: 1.15;
+      font-weight: 600;
+      margin-bottom: 24px;
+      max-width: 720px;
+    }
+
+    .section-desc {
+      font-size: 1.25rem; /* 20px */
+      color: var(--color-text-charcoal);
+      opacity: 0.9;
+      max-width: 680px;
+      margin-bottom: 48px;
+    }
+
+    /* Divider */
+    .gold-divider {
+      width: 100px;
+      height: 1px;
+      background-color: var(--color-border-beige);
+      position: relative;
+      margin: 40px 0;
+    }
+    .gold-divider::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%) rotate(45deg);
+      width: 6px;
+      height: 6px;
+      background-color: var(--color-gold);
+    }
+
+    /* ── BUTTONS ── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px 36px;
+      font-family: var(--font-body);
+      font-size: 1.0625rem; /* 17px */
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      border-radius: var(--border-radius-button);
+      cursor: pointer;
+      transition: var(--transition-smooth);
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background-color: var(--color-forest-green);
+      color: var(--color-white);
+      box-shadow: 0 4px 15px rgba(31, 77, 58, 0.15);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 25px rgba(31, 77, 58, 0.25);
+      background-color: #173d2d;
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      border-color: var(--color-forest-green);
+      color: var(--color-forest-green);
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--color-forest-green);
+      color: var(--color-white);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 25px rgba(31, 77, 58, 0.15);
+    }
+
+    .btn-accent {
+      background-color: var(--color-gold);
+      color: var(--color-white);
+      box-shadow: 0 4px 15px rgba(184, 138, 68, 0.2);
+    }
+    .btn-accent:hover {
+      background-color: var(--color-gold-hover);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 25px rgba(184, 138, 68, 0.3);
+    }
+
+    /* ── STICKY HEADER / NAVIGATION ── */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background-color: rgba(244, 234, 226, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(220, 206, 191, 0.4);
+      transition: var(--transition-smooth);
+    }
+
+    header.scrolled {
+      padding: 10px 0;
+      box-shadow: 0 10px 30px rgba(31, 77, 58, 0.04);
+      background-color: rgba(244, 234, 226, 0.95);
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 90px;
+      transition: var(--transition-smooth);
+    }
+    header.scrolled .nav-container {
+      height: 70px;
+    }
+
+    .logo-wrap { display: flex; align-items: center; gap: 12px; }
+    .logo-img { height: 48px; width: auto; transition: var(--transition-smooth); }
+    header.scrolled .logo-img { height: 40px; }
+    .logo-wordmark {
+      height: 28px;
+      width: auto;
+      transition: var(--transition-smooth);
+      opacity: 0.5;
+    }
+    header.scrolled .logo-wordmark { height: 22px; }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      list-style: none;
+      margin-left: auto;
+      margin-right: 40px;
+    }
+
+    .nav-links a {
+      font-size: 0.9375rem; /* 15px */
+      font-weight: 500;
+      color: var(--color-text-charcoal);
+      position: relative;
+      padding: 6px 0;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background-color: var(--color-gold);
+      transition: var(--transition-smooth);
+    }
+
+    .nav-links a:hover {
+      color: var(--color-forest-green);
+    }
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .header-cta {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .header-cta .btn {
+      padding: 10px 24px;
+      font-size: 0.9375rem;
+      border-radius: 10px;
+    }
+
+    /* Hamburger Menu Toggle */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 26px;
+      height: 18px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      z-index: 1002;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: var(--color-forest-green);
+      transition: var(--transition-smooth);
+      border-radius: 2px;
+    }
+
+    /* ── HERO SECTION ── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 150px;
+      padding-bottom: 100px;
+      background-color: var(--bg-warm-ivory);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #canvas-hero {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .hero-text {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-title {
+      font-family: var(--font-headings);
+      font-size: clamp(3rem, 7vw, 5.25rem); /* 48px to 84px */
+      line-height: 1.05;
+      font-weight: 700;
+      color: var(--color-forest-green);
+      margin-bottom: 24px;
+    }
+
+    .hero-title span {
+      display: block;
+      font-family: var(--font-headings);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--color-gold);
+    }
+
+    .hero-subtitle {
+      font-family: var(--font-body);
+      font-size: 1.375rem; /* 22px */
+      font-weight: 500;
+      color: var(--color-text-charcoal);
+      margin-bottom: 20px;
+      letter-spacing: 0.02em;
+    }
+
+    .hero-desc {
+      font-size: 1.1875rem; /* 19px */
+      color: var(--color-text-charcoal);
+      opacity: 0.85;
+      margin-bottom: 44px;
+      max-width: 580px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .hero-visual {
+      position: relative;
+      width: 100%;
+      height: auto;
+    }
+
+    .hero-img-container {
+      position: relative;
+      width: 100%;
+      max-width: 440px;
+      margin-left: auto;
+      border-radius: 20px;
+      z-index: 2;
+      box-shadow: var(--shadow-premium-hover);
+      overflow: hidden;
+      aspect-ratio: 3/4;
+    }
+
+    .hero-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .hero-img-container:hover .hero-img {
+      transform: scale(1.05);
+    }
+
+    /* Floating elements for botanical vibes */
+
+    /* Floating elements for botanical vibes */
+    .botanical-floating-svg {
+      position: absolute;
+      pointer-events: none;
+      opacity: 0.05;
+      z-index: 1;
+    }
+
+    .mandala-hero {
+      top: -10%;
+      right: -10%;
+      width: 500px;
+      height: 500px;
+      animation: spinMandala 40s linear infinite;
+    }
+
+    @keyframes spinMandala {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    /* ── STATS BAR ── */
+    .stats-section {
+      background-color: var(--color-forest-green);
+      padding: 60px 0;
+      color: var(--bg-warm-ivory);
+      position: relative;
+      z-index: 3;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+    }
+
+    .stat-card {
+      text-align: center;
+      border-right: 1px solid rgba(220, 206, 191, 0.15);
+    }
+
+    .stat-card:last-child {
+      border-right: none;
+    }
+
+    .stat-number {
+      font-family: var(--font-headings);
+      font-size: clamp(3rem, 5vw, 4.5rem); /* 48px to 72px */
+      font-weight: 600;
+      color: var(--color-gold);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .stat-title {
+      font-family: var(--font-body);
+      font-size: 0.875rem; /* 14px */
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      opacity: 0.75;
+    }
+
+    /* ── ABOUT PREVIEW ── */
+    .about-preview-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .about-preview-visual-box {
+      border-radius: var(--border-radius-card);
+      overflow: hidden;
+      box-shadow: var(--shadow-premium);
+      aspect-ratio: 1/1;
+      width: 100%;
+      border: 1px solid var(--color-border-beige);
+      background-color: var(--bg-warm-ivory-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .about-preview-vector {
+      width: 80%;
+      height: auto;
+      opacity: 0.8;
+    }
+
+    .about-preview-quote {
+      font-family: var(--font-headings);
+      font-size: 1.625rem; /* 26px */
+      font-style: italic;
+      color: var(--color-forest-green);
+      line-height: 1.45;
+      margin: 32px 0;
+      padding-left: 24px;
+      border-left: 2px solid var(--color-gold);
+    }
+
+    /* ── SERVICES PREVIEW ── */
+    #services-preview {
+      background-color: var(--bg-warm-ivory-dark);
+      --services-container-width: min(1220px, calc(100vw - 80px));
+      --service-card-width: calc((var(--services-container-width) - 60px) / 3);
+    }
+    @media (max-width: 1024px) {
+      #services-preview {
+        --services-container-width: calc(100vw - 64px);
+        --service-card-width: calc((var(--services-container-width) - 30px) / 2);
+      }
+    }
+    @media (max-width: 768px) {
+      #services-preview {
+        --services-container-width: calc(100vw - 64px);
+        --service-card-width: var(--services-container-width);
+      }
+    }
+    @media (max-width: 480px) {
+      #services-preview {
+        --services-container-width: calc(100vw - 40px);
+        --service-card-width: var(--services-container-width);
+      }
+    }
+    .service-preview-card {
+      background-color: var(--bg-warm-ivory);
+      border: 1px solid var(--color-border-beige);
+      border-radius: var(--border-radius-card);
+      padding: 44px 36px;
+      transition: var(--transition-smooth);
+      box-shadow: var(--shadow-premium);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      width: var(--service-card-width);
+      flex-shrink: 0;
+    }
+    .service-preview-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-premium-hover);
+      border-color: var(--color-gold);
+    }
+    .service-preview-icon {
+      width: 48px;
+      height: 48px;
+      color: var(--color-forest-green);
+      margin-bottom: 24px;
+    }
+    .service-preview-name {
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+      font-family: var(--font-headings);
+      color: var(--color-forest-green);
+    }
+
+    /* ── TESTIMONIAL PREVIEW ── */
+    #testimonials-preview {
+      background-color: var(--bg-warm-ivory);
+    }
+    .testimonials-preview-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+    .testimonial-preview-card {
+      background-color: var(--bg-warm-ivory-dark);
+      border: 1px solid var(--color-border-beige);
+      border-radius: var(--border-radius-card);
+      padding: 44px 36px;
+      box-shadow: var(--shadow-premium);
+    }
+
+    /* ── CALL TO ACTION ── */
+    #cta {
+      background-color: var(--bg-warm-ivory-dark);
+      padding: 120px 0;
+      position: relative;
+    }
+    .cta-container {
+      background: linear-gradient(135deg, #173226 0%, #0c1b14 100%);
+      border-radius: 40px;
+      padding: 80px 80px;
+      color: var(--bg-warm-ivory);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 30px 70px rgba(12, 27, 20, 0.4);
+      border: 1px solid rgba(184, 138, 68, 0.25);
+    }
+    /* Elegant animated background glow */
+    .cta-container::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -30%;
+      width: 800px;
+      height: 800px;
+      background: radial-gradient(circle, rgba(184, 138, 68, 0.08) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+      animation: rotateGlow 30s linear infinite;
+    }
+    @keyframes rotateGlow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    .cta-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 60px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+    .cta-text-side {
+      text-align: left;
+    }
+    .cta-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--color-gold);
+      font-size: 0.875rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+    .cta-eyebrow-line {
+      width: 32px;
+      height: 1px;
+      background-color: var(--color-gold);
+    }
+    .cta-container h2 {
+      font-family: var(--font-headings);
+      font-size: clamp(2.25rem, 4vw, 3.5rem);
+      line-height: 1.15;
+      color: var(--bg-warm-ivory);
+      margin-bottom: 24px;
+      font-weight: 700;
+    }
+    .cta-container h2 span.italic-gold {
+      font-family: var(--font-headings);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--color-gold);
+    }
+    .cta-desc {
+      font-size: 1.125rem;
+      line-height: 1.7;
+      opacity: 0.85;
+      color: var(--bg-warm-ivory);
+      margin-bottom: 40px;
+      max-width: 620px;
+    }
+    .cta-actions {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    /* Cards list on the right side */
+    .cta-features-side {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .cta-feature-card {
+      background: rgba(244, 234, 226, 0.04);
+      border: 1px solid rgba(220, 206, 191, 0.15);
+      border-radius: 20px;
+      padding: 24px;
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      transition: var(--transition-smooth);
+      backdrop-filter: blur(10px);
+      text-align: left;
+    }
+    .cta-feature-card:hover {
+      background: rgba(244, 234, 226, 0.08);
+      transform: translateX(5px);
+      border-color: rgba(184, 138, 68, 0.3);
+    }
+    .cta-feature-icon {
+      width: 44px;
+      height: 44px;
+      background: rgba(184, 138, 68, 0.15);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-gold);
+      flex-shrink: 0;
+      transition: var(--transition-smooth);
+    }
+    .cta-feature-card:hover .cta-feature-icon {
+      background: var(--color-gold);
+      color: var(--color-forest-green);
+    }
+    .cta-feature-icon svg {
+      width: 22px;
+      height: 22px;
+    }
+    .cta-feature-info h4 {
+      font-family: var(--font-body);
+      font-size: 1.0625rem;
+      font-weight: 600;
+      color: var(--bg-warm-ivory);
+      margin-bottom: 6px;
+    }
+    .cta-feature-info p {
+      font-size: 0.875rem;
+      line-height: 1.5;
+      color: var(--bg-warm-ivory);
+      opacity: 0.7;
+    }
+    /* Decorative SVG leaves */
+    .cta-leaf-svg {
+      position: absolute;
+      pointer-events: none;
+      opacity: 0.08;
+      transition: var(--transition-slow);
+    }
+    .cta-leaf-1 {
+      top: -30px;
+      left: -30px;
+      width: 180px;
+      height: 180px;
+      color: var(--color-gold);
+      animation: floatSlow 12s ease-in-out infinite alternate;
+    }
+    .cta-leaf-2 {
+      bottom: -40px;
+      right: -20px;
+      width: 220px;
+      height: 220px;
+      color: var(--color-gold);
+      animation: floatSlow 15s ease-in-out infinite alternate-reverse;
+    }
+    @keyframes floatSlow {
+      0% { transform: translateY(0) rotate(0deg); }
+      100% { transform: translateY(10px) rotate(5deg); }
+    }
+    @media (max-width: 1024px) {
+      .cta-container {
+        padding: 60px 40px;
+      }
+      .cta-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+      }
+      .cta-text-side {
+        text-align: center;
+      }
+      .cta-eyebrow {
+        justify-content: center;
+      }
+      .cta-desc {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .cta-actions {
+        justify-content: center;
+      }
+      .cta-features-side {
+        max-width: 600px;
+        margin: 0 auto;
+        width: 100%;
+      }
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background-color: #173226;
+      padding: 100px 0 40px;
+      color: rgba(244, 234, 226, 0.75);
+      border-top: 1px solid rgba(220, 206, 191, 0.1);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+      gap: 60px;
+      margin-bottom: 80px;
+    }
+    .footer-logo-wrap {
+      margin-bottom: 28px;
+    }
+    .footer-logo-wordmark {
+      height: 24px;
+      width: auto;
+    }
+    .footer-desc {
+      font-size: 0.9375rem;
+      line-height: 1.65;
+      margin-bottom: 24px;
+      color: rgba(244, 234, 226, 0.75);
+    }
+    footer p {
+      color: rgba(244, 234, 226, 0.75);
+    }
+    footer strong {
+      color: var(--color-gold);
+    }
+    .footer-quote {
+      font-family: var(--font-headings);
+      font-size: 1.125rem;
+      font-style: italic;
+      color: var(--color-gold);
+    }
+    .footer-col h3 {
+      color: var(--color-gold);
+      font-family: var(--font-body);
+      font-size: 0.8125rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      margin-bottom: 28px;
+    }
+    .footer-links-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .footer-links-list a {
+      font-size: 0.9375rem;
+      color: rgba(244, 234, 226, 0.7);
+      transition: var(--transition-quick);
+    }
+    .footer-links-list a:hover {
+      color: var(--color-white);
+      padding-left: 4px;
+    }
+    .footer-contact-info {
+      font-size: 0.9375rem;
+      line-height: 1.6;
+    }
+    .footer-contact-info p {
+      color: rgba(244, 234, 226, 0.7);
+      margin-bottom: 16px;
+    }
+    .footer-contact-label {
+      display: block;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-gold);
+      margin-bottom: 4px;
+    }
+    .footer-bottom {
+      border-top: 1px solid rgba(244, 234, 226, 0.08);
+      padding-top: 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .footer-copy {
+      font-size: 0.8125rem;
+    }
+    .footer-meta {
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: var(--color-white);
+    }
+    .footer-disclaimer {
+      width: 100%;
+      border-top: 1px solid rgba(244, 234, 226, 0.08);
+      margin-top: 40px;
+      padding-top: 24px;
+      font-size: 0.75rem;
+      line-height: 1.6;
+      opacity: 0.6;
+      text-align: justify;
+    }
+
+    /* ── FLOATING WHATSAPP BUTTON ── */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 40px;
+      right: 40px;
+      width: 60px;
+      height: 60px;
+      background-color: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-white);
+      z-index: 999;
+      box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.1) translateY(-5px);
+      box-shadow: 0 15px 40px rgba(37, 211, 102, 0.5);
+    }
+    .whatsapp-float svg {
+      width: 32px;
+      height: 32px;
+    }
+
+    /* ── ANIMATION REVEAL ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Cart Indicator */
+    .cart-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-forest-green);
+      transition: var(--transition-quick);
+      padding: 8px;
+    }
+    .cart-btn:hover {
+      color: var(--color-gold);
+    }
+    .cart-btn svg {
+      width: 26px;
+      height: 26px;
+    }
+    .cart-count {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-color: var(--color-gold);
+      color: var(--color-white);
+      font-size: 0.75rem;
+      font-weight: 700;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: popScale 0.3s ease;
+    }
+    @keyframes popScale {
+      from { transform: scale(0.5); }
+      to { transform: scale(1); }
+    }
+
+    /* ── CART SLIDE-OUT PANEL ── */
+    .cart-panel {
+      position: fixed;
+      top: 0;
+      right: -420px;
+      width: 100%;
+      max-width: 420px;
+      height: 100vh;
+      background-color: var(--bg-warm-ivory);
+      box-shadow: -15px 0 40px rgba(31, 77, 58, 0.15);
+      z-index: 2000;
+      transition: var(--transition-smooth);
+      display: flex;
+      flex-direction: column;
+      border-left: 1px solid var(--color-border-beige);
+    }
+    .cart-panel.open {
+      right: 0;
+    }
+    .cart-header {
+      padding: 24px 32px;
+      border-bottom: 1px solid var(--color-border-beige);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: var(--bg-warm-ivory-dark);
+    }
+    .cart-header h3 {
+      font-size: 1.625rem;
+    }
+    .close-cart-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--color-forest-green);
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6px;
+    }
+    .cart-items-wrap {
+      flex-grow: 1;
+      overflow-y: auto;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    
+    /* Cart Item Card */
+    .cart-item {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--color-border-beige);
+    }
+    .cart-item-visual {
+      width: 60px;
+      height: 60px;
+      border-radius: 8px;
+      background-color: var(--bg-warm-ivory-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .cart-item-visual svg {
+      width: 32px;
+      height: 32px;
+      color: var(--color-forest-green);
+    }
+    .cart-item-info {
+      flex-grow: 1;
+    }
+    .cart-item-name {
+      font-size: 1.0625rem;
+      font-weight: 600;
+      color: var(--color-forest-green);
+      margin-bottom: 2px;
+    }
+    .cart-item-size {
+      font-size: 0.8125rem;
+      opacity: 0.7;
+      margin-bottom: 8px;
+    }
+    .cart-item-controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .qty-controls {
+      display: flex;
+      align-items: center;
+      border: 1px solid var(--color-border-beige);
+      border-radius: 6px;
+      background-color: var(--color-white);
+    }
+    .qty-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px 10px;
+      font-size: 0.875rem;
+      color: var(--color-forest-green);
+      font-weight: bold;
+    }
+    .qty-value {
+      font-size: 0.875rem;
+      font-weight: 600;
+      padding: 0 8px;
+    }
+    .cart-item-price {
+      font-weight: 600;
+      color: var(--color-forest-green);
+      font-size: 0.9375rem;
+    }
+    .delete-item-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #b22222;
+      opacity: 0.6;
+      transition: var(--transition-quick);
+      padding: 4px;
+    }
+    .delete-item-btn:hover {
+      opacity: 1;
+    }
+    .delete-item-btn svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .cart-empty {
+      text-align: center;
+      padding: 60px 0;
+      color: var(--color-text-charcoal);
+      opacity: 0.6;
+    }
+    .cart-empty svg {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 16px;
+      color: var(--color-border-beige);
+    }
+
+    .cart-footer {
+      padding: 32px;
+      background-color: var(--bg-warm-ivory-dark);
+      border-top: 1px solid var(--color-border-beige);
+    }
+    .cart-summary-line {
+      display: flex;
+      justify-content: space-between;
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin-bottom: 24px;
+      color: var(--color-forest-green);
+    }
+    .checkout-btn {
+      width: 100%;
+      background-color: var(--color-forest-green);
+      color: var(--color-white);
+      border: none;
+      padding: 16px 0;
+      border-radius: var(--border-radius-button);
+      font-family: var(--font-body);
+      font-size: 1.0625rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    .checkout-btn:hover {
+      background-color: #173d2d;
+      transform: translateY(-2px);
+    }
+    .checkout-btn svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .cart-overlay {
+      position: fixed;
+      inset: 0;
+      background-color: rgba(31, 77, 58, 0.4);
+      backdrop-filter: blur(4px);
+      z-index: 1999;
+      opacity: 0;
+      pointer-events: none;
+      transition: var(--transition-smooth);
+    }
+    .cart-overlay.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    /* ── PRODUCT CAROUSEL MARQUEE ── */
+    #featured-products {
+      --container-width: min(1220px, calc(100vw - 80px));
+      --card-width: calc((var(--container-width) - 90px) / 4);
+    }
+    @media (max-width: 1024px) {
+      #featured-products {
+        --container-width: calc(100vw - 64px);
+        --card-width: calc((var(--container-width) - 30px) / 2);
+      }
+    }
+    @media (max-width: 768px) {
+      #featured-products {
+        --container-width: calc(100vw - 64px);
+        --card-width: var(--container-width);
+      }
+    }
+    @media (max-width: 480px) {
+      #featured-products {
+        --container-width: calc(100vw - 40px);
+        --card-width: var(--container-width);
+      }
+    }
+
+    .carousel-container {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+    .carousel-track {
+      display: flex;
+      width: max-content;
+      animation: scrollMarquee 40s linear infinite;
+    }
+    .carousel-track:hover {
+      animation-play-state: paused;
+    }
+    .carousel-group {
+      display: flex;
+      gap: 30px;
+      padding-right: 30px;
+      will-change: transform;
+    }
+    @keyframes scrollMarquee {
+      0% {
+        transform: translate3d(0, 0, 0);
+      }
+      100% {
+        transform: translate3d(-50%, 0, 0);
+      }
+    }
+
+    .product-card {
+      background-color: var(--bg-warm-ivory);
+      border: 1px solid var(--color-border-beige);
+      border-radius: var(--border-radius-card);
+      padding: 24px;
+      transition: var(--transition-smooth);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      width: var(--card-width);
+      flex-shrink: 0;
+    }
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-premium-hover);
+      border-color: var(--color-gold);
+    }
+    .product-badge {
+      position: absolute;
+      top: 24px;
+      left: 24px;
+      background-color: var(--color-gold);
+      color: var(--color-white);
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 6px 12px;
+      border-radius: 20px;
+      z-index: 5;
+    }
+    .product-visual-wrap {
+      aspect-ratio: 1/1;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(235, 224, 215, 0.4) 0%, rgba(220, 206, 191, 0.3) 100%);
+      margin-bottom: 24px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(220, 206, 191, 0.2);
+    }
+    .product-visual-svg {
+      width: 50%;
+      height: auto;
+      filter: drop-shadow(0 10px 20px rgba(31, 77, 58, 0.15));
+      transition: var(--transition-smooth);
+    }
+    .product-card:hover .product-visual-svg {
+      transform: scale(1.06) rotate(2deg);
+    }
+    .product-details {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    .product-category {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-gold);
+      margin-bottom: 6px;
+    }
+    .product-name {
+      font-family: var(--font-headings);
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+      line-height: 1.25;
+      color: var(--color-forest-green);
+    }
+    .product-size {
+      font-size: 0.875rem;
+      opacity: 0.75;
+      margin-bottom: 16px;
+    }
+    .product-desc {
+      font-size: 0.9375rem;
+      opacity: 0.85;
+      line-height: 1.6;
+      margin-bottom: 24px;
+      flex-grow: 1;
+    }
+    .product-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: auto;
+      border-top: 1px solid rgba(220, 206, 191, 0.4);
+      padding-top: 20px;
+    }
+    .product-price {
+      font-family: var(--font-headings);
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: var(--color-forest-green);
+    }
+    .add-to-cart-btn {
+      background-color: var(--color-forest-green);
+      border: none;
+      color: var(--color-white);
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-family: var(--font-body);
+      font-size: 0.875rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .add-to-cart-btn:hover {
+      background-color: var(--color-gold);
+      transform: translateY(-2px);
+    }
+
+    .mobile-cta-li { display: none; }
+    .mobile-break { display: none; }
+    .desktop-separator { display: inline; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .container { padding: 0 32px; }
+      .section { padding: 100px 0; }
+      .hero-grid { grid-template-columns: 1fr; gap: 60px; text-align: center; }
+      .hero-img-container { margin: 0 auto; max-width: 400px; }
+      .hero-frame-offset { display: none; }
+      .hero-desc { margin-left: auto; margin-right: auto; }
+      .hero-actions { justify-content: center; }
+      .about-preview-grid { grid-template-columns: 1fr; gap: 60px; }
+      .about-preview-visual-box { max-width: 500px; margin: 0 auto; }
+      .services-preview-grid { grid-template-columns: repeat(2, 1fr); }
+      .testimonials-preview-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: repeat(2, 1fr); gap: 40px; }
+
+      /* Mobile Navigation rules moved to activate at 1024px */
+      .nav-container {
+        position: relative;
+      }
+      .logo-wrap {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        margin: 0;
+        padding: 0;
+        z-index: 10;
+      }
+      .logo-wordmark {
+        display: none !important;
+      }
+      .header-cta {
+        display: flex !important;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+      }
+      .header-cta .btn {
+        display: none !important;
+      }
+      .menu-toggle {
+        display: flex;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1002;
+      }
+      .nav-links .mobile-cta-li {
+        display: block;
+        width: 100%;
+        margin-top: 10px;
+      }
+      .footer-meta {
+        display: none;
+      }
+      .collapsible-footer-col h3 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+      }
+      .collapsible-footer-col h3::after {
+        display: inline-block;
+        content: '▼';
+        font-size: 0.7rem;
+        margin-left: 8px;
+        transition: transform 0.2s ease;
+        color: var(--color-gold);
+      }
+      .collapsible-footer-col.active h3::after {
+        transform: rotate(180deg);
+      }
+      .collapsible-footer-col .footer-links-list {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+      }
+      .collapsible-footer-col.active .footer-links-list {
+        max-height: 350px;
+      }
+      .mobile-break {
+        display: block;
+        margin-top: 8px;
+      }
+      .desktop-separator {
+        display: none;
+      }
+      .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        max-width: 320px;
+        height: 100vh;
+        background-color: var(--bg-warm-ivory);
+        box-shadow: -10px 0 40px rgba(31, 77, 58, 0.15);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 32px;
+        transition: var(--transition-smooth);
+        z-index: 1001;
+        border-left: 1px solid var(--color-border-beige);
+        padding: 40px;
+        margin-left: 0;
+        margin-right: 0;
+      }
+      .nav-links.active { right: 0; }
+      .header-cta { display: none; }
+      .nav-links .mobile-cta-li {
+        display: block;
+        width: 100%;
+        margin-top: 10px;
+      }
+      .nav-links .mobile-cta-li a.btn {
+        color: var(--color-white) !important;
+        padding: 12px 24px !important;
+        font-size: 0.9375rem !important;
+        font-weight: 500 !important;
+        border-radius: 10px !important;
+        display: inline-flex !important;
+        background-color: var(--color-forest-green) !important;
+        box-shadow: 0 4px 15px rgba(31, 77, 58, 0.15) !important;
+        text-align: center;
+        width: 100%;
+        justify-content: center;
+        box-sizing: border-box;
+      }
+      .nav-links .mobile-cta-li a.btn::after {
+        display: none !important;
+      }
+      .menu-toggle.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+      .menu-toggle.active span:nth-child(2) { opacity: 0; }
+      .menu-toggle.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+    }
+    @media (max-width: 768px) {
+      .services-preview-grid { grid-template-columns: 1fr; }
+      .testimonials-preview-grid { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 30px; }
+      .stat-card { border-right: none; }
+      .stat-card:nth-child(1), .stat-card:nth-child(2) { border-bottom: 1px solid rgba(220, 206, 191, 0.15); padding-bottom: 20px; }
+      .cta-box { padding: 60px 30px; }
+    }
+    @media (max-width: 480px) {
+      .container { padding: 0 20px; }
+      .section { padding: 80px 0; }
+      .stats-grid { grid-template-columns: 1fr; }
+      .stat-card { border-bottom: 1px solid rgba(220, 206, 191, 0.15); padding-bottom: 20px; }
+      .stat-card:last-child { border-bottom: none; padding-bottom: 0; }
+      .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+      .whatsapp-float { bottom: 24px; right: 24px; width: 50px; height: 50px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── HEADER / NAVIGATION ── -->
+  <header id="header">
+    <div class="container">
+      <nav class="nav-container">
+        <a href="index.html" class="logo-wrap" aria-label="Ayusiddha Home">
+          <img src="logo.svg" alt="Ayusiddha" class="logo-img">
+          <!-- Multi-page enabled header: Increased size & 50% opacity/visibility -->
+          <img src="Wordmark.svg" alt="Ayusiddha" class="logo-wordmark">
+        </a>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li class="mobile-cta-li">
+            <a href="consultations.html" class="btn btn-primary">Book Consultation</a>
+          </li>
+        </ul>
+        
+        <div class="header-cta">
+          <!-- Cart Button -->
+          <button class="cart-btn" onclick="toggleCart()" aria-label="View Shopping Cart">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+            </svg>
+            <span class="cart-count" id="cartCount" style="display: none;">0</span>
+          </button>
+          <a href="consultations.html" class="btn btn-primary">Book Consultation</a>
+        </div>
+        
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ── HERO SECTION ── -->
+  <section id="hero">
+    <canvas id="canvas-hero"></canvas>
+    <svg class="botanical-floating-svg mandala-hero" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+      <g transform="translate(200,200)" fill="none" stroke="#1F4D3A" stroke-width="0.5">
+        <circle r="180"/>
+        <circle r="150" stroke="#B88A44"/>
+        <circle r="120"/>
+        <circle r="90" stroke="#B88A44"/>
+        <circle r="60"/>
+        <circle r="30" stroke="#B88A44"/>
+        <g opacity="0.3">
+          <script>
+            for (let i = 0; i < 24; i++) {
+              let angle = (i * Math.PI) / 12;
+              let x2 = 180 * Math.cos(angle);
+              let y2 = 180 * Math.sin(angle);
+              document.write(`<line x1="0" y1="0" x2="${x2}" y2="${y2}" stroke-width="0.3"/>`);
+            }
+          </script>
+        </g>
+      </g>
+    </svg>
+
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-text reveal">
+          <div class="section-eyebrow">
+            <div class="section-eyebrow-line"></div>
+            <span>AUTHENTIC AYURVEDA · आयुर्वेद</span>
+          </div>
+          <h1 class="hero-title">
+            Heal from Within.
+            <span>Reclaim Your Balance.</span>
+          </h1>
+          <p class="hero-subtitle">आयुषाची सिद्धी — जीवनाचे संतुलन</p>
+          <p class="hero-desc">
+            Experience premium, doctor-led Ayurvedic healthcare. We integrate ancestral wisdom with modern wellness to address the root causes of chronic illness, restoring harmony to your unique constitution (Prakriti).
+          </p>
+          <div class="hero-actions">
+            <a href="consultations.html" class="btn btn-primary">Book an Online Consultation</a>
+            <a href="services.html" class="btn btn-secondary">Explore Services</a>
+          </div>
+
+        </div>
+        
+        <div class="hero-visual reveal" style="transition-delay: 0.2s;">
+          <!-- Empty column so the background WebGL mandala shows through -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── STATS SECTION ── -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number" id="stat-practice">0</div>
+          <div class="stat-title">Years of Practice</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" id="stat-healed">0</div>
+          <div class="stat-title">Patients Healed</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" id="stat-therapies">0</div>
+          <div class="stat-title">Core Therapies</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" id="stat-consults">0</div>
+          <div class="stat-title">Herbal Products</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── BRIEF ABOUT PREVIEW ── -->
+  <section class="section">
+    <div class="container">
+      <div class="about-preview-grid">
+        <div class="about-preview-visual-box reveal">
+          <svg class="about-preview-vector" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M50 90C50 90 50 45 50 10" stroke="#1F4D3A" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M50 35C57 32 68 25 72 15C62 16 55 24 50 35Z" stroke="#B88A44" stroke-width="1.2" stroke-linejoin="round"/>
+            <path d="M50 50C43 47 32 40 28 30C38 31 45 39 50 50Z" stroke="#1F4D3A" stroke-width="1.2" stroke-linejoin="round"/>
+            <path d="M50 50C57 47 68 40 72 30C62 31 55 39 50 50Z" stroke="#B88A44" stroke-width="1.2" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        
+        <div class="about-content reveal" style="transition-delay: 0.2s;">
+          <div class="section-eyebrow">
+            <div class="section-eyebrow-line"></div>
+            <span>Who We Are</span>
+          </div>
+          <h2 class="section-title">Where Ancient Science Meets Compassionate Care</h2>
+          <blockquote class="about-preview-quote">
+            "Ayurveda is not merely a system of medicine, it is a science of life."
+          </blockquote>
+          <p style="font-size: 1.0625rem; line-height: 1.75; margin-bottom: 16px;">
+            At Ayusiddha, we practice authentic Ayurvedic medicine rooted in the classical texts of Charaka Samhita and Sushruta Samhita. Our approach identifies your unique prakriti and restores doshic harmony.
+          </p>
+          <p style="font-size: 1.0625rem; line-height: 1.75; margin-bottom: 32px;">
+            Every consultation, every treatment is deeply personalised — because no two bodies are the same, and no two healing journeys should be either.
+          </p>
+          <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 32px;">
+            <span style="padding: 8px 20px; border-radius: 6px; font-size: 0.8125rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500; background-color: rgba(31,77,58,0.08); color: var(--color-forest-green); border: 1px solid rgba(31,77,58,0.2);">Vata · वात</span>
+            <span style="padding: 8px 20px; border-radius: 6px; font-size: 0.8125rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500; background-color: rgba(184,138,68,0.1); color: var(--color-gold); border: 1px solid rgba(184,138,68,0.25);">Pitta · पित्त</span>
+            <span style="padding: 8px 20px; border-radius: 6px; font-size: 0.8125rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500; background-color: rgba(47,64,56,0.08); color: var(--color-text-charcoal); border: 1px solid rgba(47,64,56,0.2);">Kapha · कफ</span>
+          </div>
+          <a href="about.html" class="btn btn-secondary">Our Story →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SERVICES PREVIEW ── -->
+  <section id="services-preview" class="section">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 80px; display: flex; flex-direction: column; align-items: center;" class="reveal">
+        <div class="section-eyebrow">
+          <div class="section-eyebrow-line"></div>
+          <span>AUTHENTIC HEALING</span>
+        </div>
+        <h2 class="section-title">Therapies & Treatments</h2>
+        <p class="section-desc">We offer classical detoxification, specialized hair/skin solutions, and dietary assessments.</p>
+      </div>
+
+      <div class="carousel-container" style="margin-bottom: 40px;">
+        <div class="carousel-track" id="services-track">
+          <!-- Group 1 -->
+          <div class="carousel-group">
+            <!-- Treatment 1: Panchakarma -->
+            <div class="service-preview-card">
+              <div>
+                <svg class="service-preview-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M12 3v1m0 16v1m9-9h-1M4 9H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M14 12a2 2 0 11-4 0 2 2 0 014 0z"/>
+                </svg>
+                <h3 class="service-preview-name">Panchakarma</h3>
+                <p style="font-size: 0.9375rem; opacity: 0.85; line-height: 1.6;">A tailored 5-step clinical detoxification to extract deep cellular waste, reset digestion, and rebalance constitutions.</p>
+              </div>
+              <a href="services.html" style="font-size: 0.875rem; color: var(--color-gold); font-weight:600; margin-top: 20px; display: inline-block;">Learn More →</a>
+            </div>
+
+            <!-- Treatment 2: Abhyanga Massage -->
+            <div class="service-preview-card">
+              <div>
+                <svg class="service-preview-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+                </svg>
+                <h3 class="service-preview-name">Abhyanga Massage</h3>
+                <p style="font-size: 0.9375rem; opacity: 0.85; line-height: 1.6;">Synchronous body massage utilizing customized warm herbalised oils to stimulate lymph nodes and calm nerves.</p>
+              </div>
+              <a href="services.html" style="font-size: 0.875rem; color: var(--color-gold); font-weight:600; margin-top: 20px; display: inline-block;">Learn More →</a>
+            </div>
+
+            <!-- Treatment 3: Shirodhara -->
+            <div class="service-preview-card">
+              <div>
+                <svg class="service-preview-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm0 3.75a6 6 0 100 12 6 6 0 000-12z"/>
+                </svg>
+                <h3 class="service-preview-name">Shirodhara</h3>
+                <p style="font-size: 0.9375rem; opacity: 0.85; line-height: 1.6;">Continuous warm, herb-infused oil stream poured over the forehead to ease migraine, anxiety, and sleeplessness.</p>
+              </div>
+              <a href="services.html" style="font-size: 0.875rem; color: var(--color-gold); font-weight:600; margin-top: 20px; display: inline-block;">Learn More →</a>
+            </div>
+
+            <!-- Treatment 4: Herbal Treatments -->
+            <div class="service-preview-card">
+              <div>
+                <svg class="service-preview-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                </svg>
+                <h3 class="service-preview-name">Herbal Treatments</h3>
+                <p style="font-size: 0.9375rem; opacity: 0.85; line-height: 1.6;">Prescription of certified organic, premium single herbs and complex classical preparations optimized for your constitution.</p>
+              </div>
+              <a href="services.html" style="font-size: 0.875rem; color: var(--color-gold); font-weight:600; margin-top: 20px; display: inline-block;">Learn More →</a>
+            </div>
+
+            <!-- Treatment 5: Dietary Consultation -->
+            <div class="service-preview-card">
+              <div>
+                <svg class="service-preview-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M12 3v1m0 16v1m9-9h-1M4 9H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707"/>
+                </svg>
+                <h3 class="service-preview-name">Dietary Consultation</h3>
+                <p style="font-size: 0.9375rem; opacity: 0.85; line-height: 1.6;">Personalized ahara mapping with seasonal dosha-specific diet plans, incompatible combinations, and cooking rules.</p>
+              </div>
+              <a href="services.html" style="font-size: 0.875rem; color: var(--color-gold); font-weight:600; margin-top: 20px; display: inline-block;">Learn More →</a>
+            </div>
+          </div>
+
+          <!-- Group 2 (Identical Clone for Seamless Infinite Loop) -->
+          <div class="carousel-group" aria-hidden="true">
+            <!-- Treatment 1: Panchakarma -->
+            <div class="service-preview-card">
+              <div>
+                <svg class="service-preview-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M12 3v1m0 16v1m9-9h-1M4 9H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M14 12a2 2 0 11-4 0 2 2 0 014 0z"/>
+                </svg>
+                <h3 class="service-preview-name">Panchakarma</h3>
+                <p style="font-size: 0.9375rem; opacity: 0.85; line-height: 1.6;">A tailored 5-step clinical detoxification to extract deep cellular waste, reset digestion, and rebalance constitutions.</p>
+              </div>
+              <a href="services.html" style="font-size: 0.875rem; color: var(--color-gold); font-weight:600; margin-top: 20px; display: inline-block;">Learn More →</a>
+            </div>
+
+            <!-- Treatment 2: Abhyanga Massage -->
+            <div class="service-preview-card">
+              <div>
+                <svg class="service-preview-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+                </svg>
+                <h3 class="service-preview-name">Abhyanga Massage</h3>
+                <p style="font-size: 0.9375rem; opacity: 0.85; line-height: 1.6;">Synchronous body massage utilizing customized warm herbalised oils to stimulate lymph nodes and calm nerves.</p>
+              </div>
+              <a href="services.html" style="font-size: 0.875rem; color: var(--color-gold); font-weight:600; margin-top: 20px; display: inline-block;">Learn More →</a>
+            </div>
+
+            <!-- Treatment 3: Shirodhara -->
+            <div class="service-preview-card">
+              <div>
+                <svg class="service-preview-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm0 3.75a6 6 0 100 12 6 6 0 000-12z"/>
+                </svg>
+                <h3 class="service-preview-name">Shirodhara</h3>
+                <p style="font-size: 0.9375rem; opacity: 0.85; line-height: 1.6;">Continuous warm, herb-infused oil stream poured over the forehead to ease migraine, anxiety, and sleeplessness.</p>
+              </div>
+              <a href="services.html" style="font-size: 0.875rem; color: var(--color-gold); font-weight:600; margin-top: 20px; display: inline-block;">Learn More →</a>
+            </div>
+
+            <!-- Treatment 4: Herbal Treatments -->
+            <div class="service-preview-card">
+              <div>
+                <svg class="service-preview-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                </svg>
+                <h3 class="service-preview-name">Herbal Treatments</h3>
+                <p style="font-size: 0.9375rem; opacity: 0.85; line-height: 1.6;">Prescription of certified organic, premium single herbs and complex classical preparations optimized for your constitution.</p>
+              </div>
+              <a href="services.html" style="font-size: 0.875rem; color: var(--color-gold); font-weight:600; margin-top: 20px; display: inline-block;">Learn More →</a>
+            </div>
+
+            <!-- Treatment 5: Dietary Consultation -->
+            <div class="service-preview-card">
+              <div>
+                <svg class="service-preview-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M12 3v1m0 16v1m9-9h-1M4 9H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707"/>
+                </svg>
+                <h3 class="service-preview-name">Dietary Consultation</h3>
+                <p style="font-size: 0.9375rem; opacity: 0.85; line-height: 1.6;">Personalized ahara mapping with seasonal dosha-specific diet plans, incompatible combinations, and cooking rules.</p>
+              </div>
+              <a href="services.html" style="font-size: 0.875rem; color: var(--color-gold); font-weight:600; margin-top: 20px; display: inline-block;">Learn More →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div style="text-align: center; margin-top: 56px;" class="reveal">
+        <a href="services.html" class="btn btn-primary">View All Services & Specialties</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FEATURED PRODUCTS SECTION ── -->
+  <section id="featured-products" class="section" style="background-color: rgba(220, 206, 191, 0.15);">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 80px; display: flex; flex-direction: column; align-items: center;" class="reveal">
+        <div class="section-eyebrow">
+          <div class="section-eyebrow-line"></div>
+          <span>apothecary offerings</span>
+        </div>
+        <h2 class="section-title">Featured Formulations</h2>
+        <p class="section-desc">Handcrafted, doctor-formulated organic treatments designed to restore biological balance.</p>
+      </div>
+
+      <div class="carousel-container">
+        <div class="carousel-track">
+          
+          <!-- Group 1 -->
+          <div class="carousel-group">
+            <!-- Product 1: Best Hair Care Combo -->
+            <div class="product-card">
+              <span class="product-badge">Best Combo</span>
+              <div class="product-visual-wrap">
+                <svg class="product-visual-svg" viewBox="0 0 100 120" fill="none">
+                  <rect x="25" y="45" width="22" height="60" rx="3" fill="#1F4D3A" opacity="0.8"/>
+                  <rect x="32" y="30" width="8" height="15" fill="#B88A44"/>
+                  <rect x="53" y="35" width="22" height="70" rx="3" fill="#1F4D3A"/>
+                  <rect x="60" y="20" width="8" height="15" fill="#B88A44"/>
+                  <path d="M50,75 Q60,65 50,55 Q40,65 50,75 Z" fill="#B88A44" opacity="0.3"/>
+                </svg>
+              </div>
+              <div class="product-details">
+                <span class="product-category">Hair Care Combo</span>
+                <h3 class="product-name">Best Hair Care Combo</h3>
+                <span class="product-size">Shampoo (200ml) & Hair Oil (100ml)</span>
+                <div class="product-footer">
+                  <span class="product-price">₹630</span>
+                  <button class="add-to-cart-btn" onclick="addToCart('p1', 'Best Hair Care Combo', 630, 'Shampoo + Hair Oil')">Add to Cart</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product 2: Herbal Shampoo -->
+            <div class="product-card">
+              <div class="product-visual-wrap">
+                <svg class="product-visual-svg" viewBox="0 0 100 120" fill="none">
+                  <rect x="35" y="40" width="30" height="70" rx="4" fill="#1F4D3A"/>
+                  <rect x="44" y="22" width="12" height="18" fill="#B88A44"/>
+                  <circle cx="50" cy="75" r="14" fill="#EBE0D7" opacity="0.2"/>
+                  <path d="M47,75 L53,75 M50,72 L50,78" stroke="#B88A44" stroke-width="1.5"/>
+                </svg>
+              </div>
+              <div class="product-details">
+                <span class="product-category">Hair Care</span>
+                <h3 class="product-name">Herbal Shampoo</h3>
+                <span class="product-size">200ml Bottle</span>
+                <div class="product-footer">
+                  <span class="product-price">₹250</span>
+                  <button class="add-to-cart-btn" onclick="addToCart('p2', 'Herbal Shampoo', 250, '200ml')">Add to Cart</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product 3: Herbal Hair Oil -->
+            <div class="product-card">
+              <div class="product-visual-wrap">
+                <svg class="product-visual-svg" viewBox="0 0 100 120" fill="none">
+                  <rect x="36" y="45" width="28" height="65" rx="4" fill="#1F4D3A" opacity="0.9"/>
+                  <path d="M44,45 L44,25 L56,25 L56,45 Z" fill="#B88A44"/>
+                  <circle cx="50" cy="77" r="10" fill="none" stroke="#B88A44" stroke-width="1.5"/>
+                  <path d="M50,72 Q54,77 50,82 Q46,77 50,72 Z" fill="#B88A44"/>
+                </svg>
+              </div>
+              <div class="product-details">
+                <span class="product-category">Hair Care</span>
+                <h3 class="product-name">Herbal Hair Oil</h3>
+                <span class="product-size">100ml Bottle</span>
+                <div class="product-footer">
+                  <span class="product-price">₹380</span>
+                  <button class="add-to-cart-btn" onclick="addToCart('p3', 'Herbal Hair Oil', 380, '100ml')">Add to Cart</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product 4: Hair Growth Serum -->
+            <div class="product-card">
+              <span class="product-badge">All New</span>
+              <div class="product-visual-wrap">
+                <svg class="product-visual-svg" viewBox="0 0 100 120" fill="none">
+                  <rect x="38" y="50" width="24" height="60" rx="3" fill="#1F4D3A"/>
+                  <rect x="46" y="32" width="8" height="18" fill="#B88A44"/>
+                  <path d="M43,32 Q50,22 57,32" stroke="#B88A44" stroke-width="1.5"/>
+                  <circle cx="50" cy="80" r="8" fill="none" stroke="#B88A44" stroke-width="1"/>
+                </svg>
+              </div>
+              <div class="product-details">
+                <span class="product-category">Hair Care</span>
+                <h3 class="product-name">Hair Growth Serum</h3>
+                <span class="product-size">25ml Dropper</span>
+                <div class="product-footer">
+                  <span class="product-price">₹450</span>
+                  <button class="add-to-cart-btn" onclick="addToCart('p4', 'Hair Growth Serum', 450, '25ml')">Add to Cart</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product 5: SuvarnaPrashan Drops -->
+            <div class="product-card">
+              <span class="product-badge">Best Seller</span>
+              <div class="product-visual-wrap">
+                <svg class="product-visual-svg" viewBox="0 0 100 120" fill="none">
+                  <rect x="36" y="45" width="28" height="65" rx="4" fill="#B88A44" opacity="0.3"/>
+                  <rect x="38" y="48" width="24" height="59" rx="3" fill="#1F4D3A"/>
+                  <rect x="45" y="28" width="10" height="20" fill="#B88A44"/>
+                  <circle cx="50" cy="78" r="10" fill="none" stroke="#B88A44" stroke-width="1.5"/>
+                  <path d="M50,72 L53,78 L47,78 Z" fill="#B88A44"/>
+                </svg>
+              </div>
+              <div class="product-details">
+                <span class="product-category">Pediatric Wellness</span>
+                <h3 class="product-name">SuvarnaPrashan Drops</h3>
+                <span class="product-size">25ml Dropper</span>
+                <div class="product-footer">
+                  <span class="product-price">₹1800</span>
+                  <button class="add-to-cart-btn" onclick="addToCart('p5', 'SuvarnaPrashan Drops', 1800, '25ml')">Add to Cart</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product 6: Face Glow Serum -->
+            <div class="product-card">
+              <span class="product-badge">New Launch</span>
+              <div class="product-visual-wrap">
+                <svg class="product-visual-svg" viewBox="0 0 100 120" fill="none">
+                  <rect x="38" y="50" width="24" height="60" rx="3" fill="#1F4D3A" opacity="0.85"/>
+                  <rect x="46" y="32" width="8" height="18" fill="#B88A44"/>
+                  <circle cx="50" cy="80" r="6" fill="#B88A44" opacity="0.5"/>
+                </svg>
+              </div>
+              <div class="product-details">
+                <span class="product-category">Skin Care</span>
+                <h3 class="product-name">Face Glow Serum</h3>
+                <span class="product-size">25ml Dropper</span>
+                <div class="product-footer">
+                  <span class="product-price">₹450</span>
+                  <button class="add-to-cart-btn" onclick="addToCart('p6', 'Face Glow Serum', 450, '25ml')">Add to Cart</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product 7: Herbal Face Wash -->
+            <div class="product-card">
+              <div class="product-visual-wrap">
+                <svg class="product-visual-svg" viewBox="0 0 100 120" fill="none">
+                  <path d="M35,110 L65,110 L60,40 L40,40 Z" fill="#EBE0D7" stroke="#1F4D3A" stroke-width="2"/>
+                  <rect x="44" y="24" width="12" height="16" fill="#B88A44"/>
+                </svg>
+              </div>
+              <div class="product-details">
+                <span class="product-category">Skin Care</span>
+                <h3 class="product-name">Herbal Face Wash</h3>
+                <span class="product-size">200ml Tube</span>
+                <div class="product-footer">
+                  <span class="product-price">₹280</span>
+                  <button class="add-to-cart-btn" onclick="addToCart('p7', 'Herbal Face Wash', 280, '200ml')">Add to Cart</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product 8: Kumkumadi Ghrita -->
+            <div class="product-card">
+              <div class="product-visual-wrap">
+                <svg class="product-visual-svg" viewBox="0 0 100 120" fill="none">
+                  <rect x="30" y="55" width="40" height="50" rx="10" fill="#1F4D3A"/>
+                  <rect x="25" y="45" width="50" height="10" rx="3" fill="#B88A44"/>
+                  <circle cx="50" cy="80" r="10" fill="none" stroke="#B88A44" stroke-width="1"/>
+                </svg>
+              </div>
+              <div class="product-details">
+                <span class="product-category">Skin Care</span>
+                <h3 class="product-name">Kumkumadi Ghrita</h3>
+                <span class="product-size">30g Jar</span>
+                <div class="product-footer">
+                  <span class="product-price">₹450</span>
+                  <button class="add-to-cart-btn" onclick="addToCart('p8', 'Kumkumadi Ghrita', 450, '30g')">Add to Cart</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product 9: Shatadhaut Ghrita -->
+            <div class="product-card">
+              <div class="product-visual-wrap">
+                <svg class="product-visual-svg" viewBox="0 0 100 120" fill="none">
+                  <rect x="30" y="55" width="40" height="50" rx="10" fill="#1F4D3A" opacity="0.8"/>
+                  <rect x="25" y="45" width="50" height="10" rx="3" fill="#B88A44"/>
+                  <path d="M45,75 Q50,70 55,75" stroke="#B88A44" stroke-width="1.5"/>
+                </svg>
+              </div>
+              <div class="product-details">
+                <span class="product-category">Skin Care</span>
+                <h3 class="product-name">Shatadhaut Ghrita</h3>
+                <span class="product-size">30g Jar</span>
+                <div class="product-footer">
+                  <span class="product-price">₹380</span>
+                  <button class="add-to-cart-btn" onclick="addToCart('p9', 'Shatadhaut Ghrita', 380, '30g')">Add to Cart</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product 10: Acne Cream -->
+            <div class="product-card">
+              <div class="product-visual-wrap">
+                <svg class="product-visual-svg" viewBox="0 0 100 120" fill="none">
+                  <rect x="32" y="55" width="36" height="50" rx="8" fill="#1F4D3A"/>
+                  <rect x="28" y="45" width="44" height="10" rx="2" fill="#B88A44"/>
+                  <circle cx="50" cy="80" r="8" fill="none" stroke="#EBE0D7" opacity="0.3" stroke-width="1"/>
+                </svg>
+              </div>
+              <div class="product-details">
+                <span class="product-category">Skin Care</span>
+                <h3 class="product-name">Acne Cream</h3>
+                <span class="product-size">30g Jar</span>
+                <div class="product-footer">
+                  <span class="product-price">₹380</span>
+                  <button class="add-to-cart-btn" onclick="addToCart('p10', 'Acne Cream', 380, '30g')">Add to Cart</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product 11: Herbal Detan Soap -->
+            <div class="product-card">
+              <div class="product-visual-wrap">
+                <svg class="product-visual-svg" viewBox="0 0 100 120" fill="none">
+                  <rect x="25" y="45" width="50" height="40" rx="6" fill="#B88A44" opacity="0.8"/>
+                  <rect x="28" y="48" width="44" height="34" rx="4" fill="#1F4D3A"/>
+                </svg>
+              </div>
+              <div class="product-details">
+                <span class="product-category">Skin Care</span>
+                <h3 class="product-name">Herbal Detan Soap</h3>
+                <span class="product-size">100g Bar</span>
+                <div class="product-footer">
+                  <span class="product-price">₹120</span>
+                  <button class="add-to-cart-btn" onclick="addToCart('p11', 'Herbal Detan Soap', 120, '100g')">Add to Cart</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Group 2 (Identical Clone for Seamless Infinite Loop) -->
+          <div class="carousel-group" aria-hidden="true">
+            <!-- Product 1: Best Hair Care Combo -->
+            <div class="product-card">
+              <span class="product-badge">Best Combo</span>
+              <div class="product-visual-wrap">
+                <svg class="product-visual-svg" viewBox="0 0 100 120" fill="none">
+                  <rect x="25" y="45" width="22" height="60" rx="3" fill="#1F4D3A" opacity="0.8"/>
+                  <rect x="32" y="30" width="8" height="15" fill="#B88A44"/>
+                  <rect x="53" y="35" width="22" height="70" rx="3" fill="#1F4D3A"/>
+                  <rect x="60" y="20" width="8" height="15" fill="#B88A44"/>
+                  <path d="M50,75 Q60,65 50,55 Q40,65 50,75 Z" fill="#B88A44" opacity="0.3"/>
+                </svg>
+              </div>
+              <div class="product-details">
+                <span class="product-category">Hair Care Combo</span>
+                <h3 class="product-name">Best Hair Care Combo</h3>
+                <span class="product-size">Shampoo (200ml) & Hair Oil (100ml)</span>
+                <div class="product-footer">
+                  <span class="product-price">₹630</span>
+                  <button class="add-to-cart-btn" onclick="addToCart('p1', 'Best Hair Care Combo', 630, 'Shampoo + Hair Oil')">Add to Cart</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product 2: Herbal Shampoo -->
+            <div class="product-card">
+              <div class="product-visual-wrap">
+                <svg class="product-visual-svg" viewBox="0 0 100 120" fill="none">
+                  <rect x="35" y="40" width="30" height="70" rx="4" fill="#1F4D3A"/>
+                  <rect x="44" y="22" width="12" height="18" fill="#B88A44"/>
+                  <circle cx="50" cy="75" r="14" fill="#EBE0D7" opacity="0.2"/>
+                  <path d="M47,75 L53,75 M50,72 L50,78" stroke="#B88A44" stroke-width="1.5"/>
+                </svg>
+              </div>
+              <div class="product-details">
+                <span class="product-category">Hair Care</span>
+                <h3 class="product-name">Herbal Shampoo</h3>
+                <span class="product-size">200ml Bottle</span>
+                <div class="product-footer">
+                  <span class="product-price">₹250</span>
+                  <button class="add-to-cart-btn" onclick="addToCart('p2', 'Herbal Shampoo', 250, '200ml')">Add to Cart</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product 3: Herbal Hair Oil -->
+            <div class="product-card">
+              <div class="product-visual-wrap">
+                <svg class="product-visual-svg" viewBox="0 0 100 120" fill="none">
+                  <rect x="36" y="45" width="28" height="65" rx="4" fill="#1F4D3A" opacity="0.9"/>
+                  <path d="M44,45 L44,25 L56,25 L56,45 Z" fill="#B88A44"/>
+                  <circle cx="50" cy="77" r="10" fill="none" stroke="#B88A44" stroke-width="1.5"/>
+                  <path d="M50,72 Q54,77 50,82 Q46,77 50,72 Z" fill="#B88A44"/>
+                </svg>
+              </div>
+              <div class="product-details">
+                <span class="product-category">Hair Care</span>
+                <h3 class="product-name">Herbal Hair Oil</h3>
+                <span class="product-size">100ml Bottle</span>
+                <div class="product-footer">
+                  <span class="product-price">₹380</span>
+                  <button class="add-to-cart-btn" onclick="addToCart('p3', 'Herbal Hair Oil', 380, '100ml')">Add to Cart</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product 4: Hair Growth Serum -->
+            <div class="product-card">
+              <span class="product-badge">All New</span>
+              <div class="product-visual-wrap">
+                <svg class="product-visual-svg" viewBox="0 0 100 120" fill="none">
+                  <rect x="38" y="50" width="24" height="60" rx="3" fill="#1F4D3A"/>
+                  <rect x="46" y="32" width="8" height="18" fill="#B88A44"/>
+                  <path d="M43,32 Q50,22 57,32" stroke="#B88A44" stroke-width="1.5"/>
+                  <circle cx="50" cy="80" r="8" fill="none" stroke="#B88A44" stroke-width="1"/>
+                </svg>
+              </div>
+              <div class="product-details">
+                <span class="product-category">Hair Care</span>
+                <h3 class="product-name">Hair Growth Serum</h3>
+                <span class="product-size">25ml Dropper</span>
+                <div class="product-footer">
+                  <span class="product-price">₹450</span>
+                  <button class="add-to-cart-btn" onclick="addToCart('p4', 'Hair Growth Serum', 450, '25ml')">Add to Cart</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product 5: SuvarnaPrashan Drops -->
+            <div class="product-card">
+              <span class="product-badge">Best Seller</span>
+              <div class="product-visual-wrap">
+                <svg class="product-visual-svg" viewBox="0 0 100 120" fill="none">
+                  <rect x="36" y="45" width="28" height="65" rx="4" fill="#B88A44" opacity="0.3"/>
+                  <rect x="38" y="48" width="24" height="59" rx="3" fill="#1F4D3A"/>
+                  <rect x="45" y="28" width="10" height="20" fill="#B88A44"/>
+                  <circle cx="50" cy="78" r="10" fill="none" stroke="#B88A44" stroke-width="1.5"/>
+                  <path d="M50,72 L53,78 L47,78 Z" fill="#B88A44"/>
+                </svg>
+              </div>
+              <div class="product-details">
+                <span class="product-category">Pediatric Wellness</span>
+                <h3 class="product-name">SuvarnaPrashan Drops</h3>
+                <span class="product-size">25ml Dropper</span>
+                <div class="product-footer">
+                  <span class="product-price">₹1800</span>
+                  <button class="add-to-cart-btn" onclick="addToCart('p5', 'SuvarnaPrashan Drops', 1800, '25ml')">Add to Cart</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product 6: Face Glow Serum -->
+            <div class="product-card">
+              <span class="product-badge">New Launch</span>
+              <div class="product-visual-wrap">
+                <svg class="product-visual-svg" viewBox="0 0 100 120" fill="none">
+                  <rect x="38" y="50" width="24" height="60" rx="3" fill="#1F4D3A" opacity="0.85"/>
+                  <rect x="46" y="32" width="8" height="18" fill="#B88A44"/>
+                  <circle cx="50" cy="80" r="6" fill="#B88A44" opacity="0.5"/>
+                </svg>
+              </div>
+              <div class="product-details">
+                <span class="product-category">Skin Care</span>
+                <h3 class="product-name">Face Glow Serum</h3>
+                <span class="product-size">25ml Dropper</span>
+                <div class="product-footer">
+                  <span class="product-price">₹450</span>
+                  <button class="add-to-cart-btn" onclick="addToCart('p6', 'Face Glow Serum', 450, '25ml')">Add to Cart</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product 7: Herbal Face Wash -->
+            <div class="product-card">
+              <div class="product-visual-wrap">
+                <svg class="product-visual-svg" viewBox="0 0 100 120" fill="none">
+                  <path d="M35,110 L65,110 L60,40 L40,40 Z" fill="#EBE0D7" stroke="#1F4D3A" stroke-width="2"/>
+                  <rect x="44" y="24" width="12" height="16" fill="#B88A44"/>
+                </svg>
+              </div>
+              <div class="product-details">
+                <span class="product-category">Skin Care</span>
+                <h3 class="product-name">Herbal Face Wash</h3>
+                <span class="product-size">200ml Tube</span>
+                <div class="product-footer">
+                  <span class="product-price">₹280</span>
+                  <button class="add-to-cart-btn" onclick="addToCart('p7', 'Herbal Face Wash', 280, '200ml')">Add to Cart</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product 8: Kumkumadi Ghrita -->
+            <div class="product-card">
+              <div class="product-visual-wrap">
+                <svg class="product-visual-svg" viewBox="0 0 100 120" fill="none">
+                  <rect x="30" y="55" width="40" height="50" rx="10" fill="#1F4D3A"/>
+                  <rect x="25" y="45" width="50" height="10" rx="3" fill="#B88A44"/>
+                  <circle cx="50" cy="80" r="10" fill="none" stroke="#B88A44" stroke-width="1"/>
+                </svg>
+              </div>
+              <div class="product-details">
+                <span class="product-category">Skin Care</span>
+                <h3 class="product-name">Kumkumadi Ghrita</h3>
+                <span class="product-size">30g Jar</span>
+                <div class="product-footer">
+                  <span class="product-price">₹450</span>
+                  <button class="add-to-cart-btn" onclick="addToCart('p8', 'Kumkumadi Ghrita', 450, '30g')">Add to Cart</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product 9: Shatadhaut Ghrita -->
+            <div class="product-card">
+              <div class="product-visual-wrap">
+                <svg class="product-visual-svg" viewBox="0 0 100 120" fill="none">
+                  <rect x="30" y="55" width="40" height="50" rx="10" fill="#1F4D3A" opacity="0.8"/>
+                  <rect x="25" y="45" width="50" height="10" rx="3" fill="#B88A44"/>
+                  <path d="M45,75 Q50,70 55,75" stroke="#B88A44" stroke-width="1.5"/>
+                </svg>
+              </div>
+              <div class="product-details">
+                <span class="product-category">Skin Care</span>
+                <h3 class="product-name">Shatadhaut Ghrita</h3>
+                <span class="product-size">30g Jar</span>
+                <div class="product-footer">
+                  <span class="product-price">₹380</span>
+                  <button class="add-to-cart-btn" onclick="addToCart('p9', 'Shatadhaut Ghrita', 380, '30g')">Add to Cart</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product 10: Acne Cream -->
+            <div class="product-card">
+              <div class="product-visual-wrap">
+                <svg class="product-visual-svg" viewBox="0 0 100 120" fill="none">
+                  <rect x="32" y="55" width="36" height="50" rx="8" fill="#1F4D3A"/>
+                  <rect x="28" y="45" width="44" height="10" rx="2" fill="#B88A44"/>
+                  <circle cx="50" cy="80" r="8" fill="none" stroke="#EBE0D7" opacity="0.3" stroke-width="1"/>
+                </svg>
+              </div>
+              <div class="product-details">
+                <span class="product-category">Skin Care</span>
+                <h3 class="product-name">Acne Cream</h3>
+                <span class="product-size">30g Jar</span>
+                <div class="product-footer">
+                  <span class="product-price">₹380</span>
+                  <button class="add-to-cart-btn" onclick="addToCart('p10', 'Acne Cream', 380, '30g')">Add to Cart</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product 11: Herbal Detan Soap -->
+            <div class="product-card">
+              <div class="product-visual-wrap">
+                <svg class="product-visual-svg" viewBox="0 0 100 120" fill="none">
+                  <rect x="25" y="45" width="50" height="40" rx="6" fill="#B88A44" opacity="0.8"/>
+                  <rect x="28" y="48" width="44" height="34" rx="4" fill="#1F4D3A"/>
+                </svg>
+              </div>
+              <div class="product-details">
+                <span class="product-category">Skin Care</span>
+                <h3 class="product-name">Herbal Detan Soap</h3>
+                <span class="product-size">100g Bar</span>
+                <div class="product-footer">
+                  <span class="product-price">₹120</span>
+                  <button class="add-to-cart-btn" onclick="addToCart('p11', 'Herbal Detan Soap', 120, '100g')">Add to Cart</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 56px;" class="reveal">
+        <a href="shop.html" class="btn btn-primary">View All Offerings</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TESTIMONIAL PREVIEW ── -->
+  <section id="testimonials-preview" class="section">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 80px; display: flex; flex-direction: column; align-items: center;" class="reveal">
+        <div class="section-eyebrow">
+          <div class="section-eyebrow-line"></div>
+          <span>TESTIMONIALS</span>
+        </div>
+        <h2 class="section-title">Lives Transformed</h2>
+        <p class="section-desc">Read how patients achieved wellness and resolved long-standing chronic health imbalances.</p>
+      </div>
+
+      <div class="testimonials-preview-grid">
+        <div class="testimonial-preview-card reveal">
+          <div style="color: var(--color-gold); font-size: 0.9375rem; margin-bottom: 16px;">★★★★★</div>
+          <p style="font-family: var(--font-headings); font-style: italic; font-size: 1.25rem; margin-bottom: 24px;">
+            "I suffered from chronic hair fall, scalp itching, and severe dandruff for years. Dr. Monali's internal herbs and customized scalp oils completely reversed it."
+          </p>
+          <div style="font-weight: 600; color: var(--color-forest-green);">Smt. Vandana Kulkarni</div>
+          <div style="font-size: 0.75rem; opacity: 0.7;">Pune, Maharashtra</div>
+        </div>
+
+        <div class="testimonial-preview-card reveal" style="transition-delay: 0.1s;">
+          <div style="color: var(--color-gold); font-size: 0.9375rem; margin-bottom: 16px;">★★★★★</div>
+          <p style="font-family: var(--font-headings); font-style: italic; font-size: 1.25rem; margin-bottom: 24px;">
+            "Managing PCOS was exhausting. I had irregular cycles and bloating. The dietary guidelines and herbal remedies Dr. Monali prescribed resolved my symptoms."
+          </p>
+          <div style="font-weight: 600; color: var(--color-forest-green);">Mr. Rahul Deshmukh</div>
+          <div style="font-size: 0.75rem; opacity: 0.7;">Nashik, Maharashtra</div>
+        </div>
+
+        <div class="testimonial-preview-card reveal" style="transition-delay: 0.2s;">
+          <div style="color: var(--color-gold); font-size: 0.9375rem; margin-bottom: 16px;">★★★★★</div>
+          <p style="font-family: var(--font-headings); font-style: italic; font-size: 1.25rem; margin-bottom: 24px;">
+            "I consulted Dr. Monali for fatty liver and sluggish digestion. Her recommended diet tweaks and liver formulations restored my gut health completely."
+          </p>
+          <div style="font-weight: 600; color: var(--color-forest-green);">Smt. Asha Pawar</div>
+          <div style="font-size: 0.75rem; opacity: 0.7;">Aurangabad, Maharashtra</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CALL TO ACTION SECTION ── -->
+  <section id="cta">
+    <div class="container">
+      <div class="cta-container reveal">
+        <!-- Floating Leaf 1 -->
+        <svg class="cta-leaf-svg cta-leaf-1" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M17 8C8 10 7 19 7 19S16 18 18 10C19.5 5.5 17 8 17 8Z" opacity="0.3"/>
+          <path d="M2 22C2 22 8 16 12 12M12 12C14 10 16 7 20 4M12 12C10 14 7 16 4 20" stroke="currentColor" stroke-width="0.8" stroke-linecap="round"/>
+        </svg>
+        
+        <!-- Floating Leaf 2 -->
+        <svg class="cta-leaf-svg cta-leaf-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M17 8C8 10 7 19 7 19S16 18 18 10C19.5 5.5 17 8 17 8Z" opacity="0.3"/>
+          <path d="M2 22C2 22 8 16 12 12M12 12C14 10 16 7 20 4M12 12C10 14 7 16 4 20" stroke="currentColor" stroke-width="0.8" stroke-linecap="round"/>
+        </svg>
+
+        <div class="cta-grid">
+          <!-- Text Side -->
+          <div class="cta-text-side">
+            <div class="cta-eyebrow">
+              <div class="cta-eyebrow-line"></div>
+              <span>RESTORE HEALTH TODAY</span>
+            </div>
+            <h2>Begin Your Journey to <br><span class="italic-gold">Vibrant Health</span></h2>
+            <p class="cta-desc">
+              Schedule your video consultation with Dr. Monali Pawar. Obtain a professional diagnosis, tailored diet protocols, and personalized herb support shipped to your door.
+            </p>
+            
+            <div class="cta-actions">
+              <a href="consultations.html" class="btn btn-accent">Book Paid Video Consult (₹499)</a>
+              <a href="contact.html" class="btn btn-secondary" style="border-color: var(--bg-warm-ivory); color: var(--bg-warm-ivory);">Contact Our Team</a>
+            </div>
+          </div>
+
+          <!-- Features Cards Side -->
+          <div class="cta-features-side">
+            <!-- Feature 1 -->
+            <div class="cta-feature-card">
+              <div class="cta-feature-icon">
+                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                </svg>
+              </div>
+              <div class="cta-feature-info">
+                <h4>Focused Video Consult</h4>
+                <p>20-30 minute focused session for tongue diagnostics, symptom analysis, and Prakriti audit.</p>
+              </div>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="cta-feature-card">
+              <div class="cta-feature-icon">
+                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                </svg>
+              </div>
+              <div class="cta-feature-info">
+                <h4>Tailored Diet & Herbs</h4>
+                <p>Get custom pathya-apathya guidelines and classical organic remedies sent directly to you.</p>
+              </div>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="cta-feature-card">
+              <div class="cta-feature-icon">
+                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                </svg>
+              </div>
+              <div class="cta-feature-info">
+                <h4>Doctor-Led Support</h4>
+                <p>Consultations are conducted directly by Dr. Monali Pawar (BAMS, MD - Panchakarma).</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CART DRAWER PANEL ── -->
+  <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+  <div class="cart-panel" id="cartPanel">
+    <div class="cart-header">
+      <h3>Your Apothecary Cart</h3>
+      <button class="close-cart-btn" onclick="toggleCart()" aria-label="Close Shopping Cart">✕</button>
+    </div>
+    
+    <div class="cart-items-wrap" id="cartItemsContainer">
+      <!-- Cart items injected here via JS -->
+    </div>
+    
+    <div class="cart-footer">
+      <div class="cart-summary-line">
+        <span>Subtotal</span>
+        <span id="cartSubtotal">₹0</span>
+      </div>
+      <button class="checkout-btn" onclick="checkoutWhatsApp()">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 11.944.01c3.17 0 6.15 1.235 8.39 3.479 2.24 2.24 3.473 5.224 3.47 8.395-.006 6.544-5.342 11.884-11.89 11.884-.198 0-.396-.002-.594-.006a11.82 11.82 0 01-5.69-1.488L0 24zm6.305-1.654a9.87 9.87 0 005.69 1.448h.005c5.448 0 9.882-4.436 9.885-9.89a9.825 9.825 0 00-2.893-6.994c-1.867-1.868-4.35-2.898-6.993-2.898-5.45 0-9.885 4.434-9.888 9.884a9.86 9.86 0 001.51 5.26l.235.374-1.002 3.65 3.74-.984.363.216a9.87 9.87 0 005.031 1.383zm11.11-7.002c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+        </svg>
+        Checkout via WhatsApp
+      </button>
+    </div>
+  </div>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-logo-wrap">
+            <!-- Footer wordmark updated to gold version: Wordmark_gold.svg -->
+            <img src="Wordmark_gold.svg" alt="Ayusiddha Logo" class="footer-logo-wordmark">
+          </div>
+          <p class="footer-desc">
+            Ayusiddha represents premium, doctor-led clinical Ayurvedic medicine. We restore biological balance and address metabolic, hormonal, skin, and hair disorders from their roots.
+          </p>
+          <div class="footer-quote">
+            "आयुर्वेदं अमृतम् — Ayurveda is immortality"
+          </div>
+        </div>
+        
+        <div class="footer-col collapsible-footer-col">
+          <h3>Quick Navigation</h3>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Home Base</a></li>
+            <li><a href="about.html">About the Doctor</a></li>
+            <li><a href="services.html">Our Core Services</a></li>
+            <li><a href="shop.html">The Apothecary</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col collapsible-footer-col">
+          <h3>Clinical Specialties</h3>
+          <ul class="footer-links-list">
+            <li><a href="services.html">Panchakarma Detox</a></li>
+            <li><a href="services.html">Abhyanga Massage</a></li>
+            <li><a href="services.html">Shirodhara Therapy</a></li>
+            <li><a href="services.html">Hair Loss Treatment</a></li>
+            <li><a href="services.html">Skin Wellness Care</a></li>
+            <li><a href="services.html">PCOS & Cyst Balance</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Contact & Info</h3>
+          <div class="footer-contact-info">
+            <span class="footer-contact-label">Secure Bookings</span>
+            <p>Video consultations scheduled via Calendly.</p>
+            
+            <span class="footer-contact-label">WhatsApp Helpline</span>
+            <p><a href="tel:+918302898820" style="color: var(--color-white); font-weight: 500;">+91 83028 98820</a></p>
+            
+            <span class="footer-contact-label">Email Assistance</span>
+            <p><a href="mailto:help.ayusiddha@gmail.com" style="color: var(--color-white);">help.ayusiddha@gmail.com</a></p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <div class="footer-copy">
+          &copy; 2026 Ayusiddha | All rights reserved.<span class="desktop-separator"> | </span><br class="mobile-break">Designed with ❤️ for healing
+        </div>
+        <div class="footer-meta">
+          Dr. Monali Pawar (BAMS, MD - Panchakarma) · Registered Medical Practitioner
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ── FLOATING WHATSAPP BUTTON ── -->
+  <div class="whatsapp-float" onclick="window.open('https://wa.me/918302898820?text=Hello%20Dr.%20Monali,%20I%20would%20like%20to%20inquire%20about%20an%20Ayurvedic%20consultation.', '_blank')" title="Chat with Dr. Monali on WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </div>
+
+  <!-- ── JAVASCRIPT ── -->
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    menuToggle.addEventListener('click', () => {
+      menuToggle.classList.toggle('active');
+      navLinks.classList.toggle('active');
+      document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+    });
+
+    function closeMenu() {
+      menuToggle.classList.remove('active');
+      navLinks.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    window.addEventListener('scroll', () => {
+      const header = document.getElementById('header');
+      if (window.scrollY > 40) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+    function animateCounter(elementId, targetVal, suffix, duration) {
+      const el = document.getElementById(elementId);
+      if (!el) return;
+      let start = 0;
+      const step = (timestamp) => {
+        if (!start) start = timestamp;
+        const progress = Math.min((timestamp - start) / duration, 1);
+        el.textContent = Math.floor(progress * targetVal) + suffix;
+        if (progress < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    }
+
+    let countersAnimated = false;
+    function checkStatsInView() {
+      const statsSec = document.querySelector('.stats-section');
+      if (!statsSec || countersAnimated) return;
+      const rect = statsSec.getBoundingClientRect();
+      if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+        countersAnimated = true;
+        animateCounter('stat-practice', 3, '+', 1500);
+        animateCounter('stat-healed', 100, '+', 2000);
+        animateCounter('stat-therapies', 5, '', 1200);
+        animateCounter('stat-consults', 10, '+', 2200);
+      }
+    }
+
+    window.addEventListener('scroll', checkStatsInView);
+    window.addEventListener('load', checkStatsInView);
+
+    const revealCallback = (entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          observer.unobserve(entry.target);
+        }
+      });
+    };
+    const revealObserver = new IntersectionObserver(revealCallback, {
+      root: null, threshold: 0.1, rootMargin: "0px 0px -50px 0px"
+    });
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+      loadCart();
+      initCarouselMarquee();
+      initServicesMarquee();
+
+      // Footer Collapsible Accordion on Mobile
+      document.querySelectorAll('.collapsible-footer-col h3').forEach(heading => {
+        heading.addEventListener('click', () => {
+          if (window.innerWidth <= 1024) {
+            heading.parentElement.classList.toggle('active');
+          }
+        });
+      });
+    });
+
+    /* ── PRODUCT CAROUSEL MARQUEE LOGIC ── */
+    function initCarouselMarquee() {
+      const track = document.querySelector('.carousel-track');
+      if (!track) return;
+
+      let currentX = 0;
+      let isHovered = false;
+
+      // Disable CSS animation fallback
+      track.style.animation = 'none';
+
+      function getLimit() {
+        return track.scrollWidth / 2;
+      }
+
+      function step() {
+        if (!isHovered) {
+          const limit = getLimit();
+          if (limit > 0) {
+            currentX -= 0.6; // Scroll speed (pixels per frame)
+            if (currentX <= -limit) {
+              currentX += limit; // Wrap right to left
+            }
+            track.style.transform = `translate3d(${currentX}px, 0, 0)`;
+          }
+        }
+        requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+
+      // Hover events (pause auto-scrolling)
+      track.addEventListener('mouseenter', () => isHovered = true);
+      track.addEventListener('mouseleave', () => isHovered = false);
+
+      // Touch events (pause auto-scrolling on mobile touch/tap)
+      track.addEventListener('touchstart', () => isHovered = true, { passive: true });
+      track.addEventListener('touchend', () => isHovered = false);
+      track.addEventListener('touchcancel', () => isHovered = false);
+    }
+
+    function initServicesMarquee() {
+      const track = document.getElementById('services-track');
+      if (!track) return;
+
+      let currentX = 0;
+      let isHovered = false;
+
+      // Disable CSS animation fallback
+      track.style.animation = 'none';
+
+      function getLimit() {
+        return track.scrollWidth / 2;
+      }
+
+      function step() {
+        if (!isHovered) {
+          const limit = getLimit();
+          if (limit > 0) {
+            currentX -= 0.5; // Scroll speed (pixels per frame)
+            if (currentX <= -limit) {
+              currentX += limit; // Seamless loop wrap
+            }
+            track.style.transform = `translate3d(${currentX}px, 0, 0)`;
+          }
+        }
+        requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+
+      // Hover events (pause auto-scrolling)
+      track.addEventListener('mouseenter', () => isHovered = true);
+      track.addEventListener('mouseleave', () => isHovered = false);
+
+      // Touch events (pause auto-scrolling on mobile touch/tap)
+      track.addEventListener('touchstart', () => isHovered = true, { passive: true });
+      track.addEventListener('touchend', () => isHovered = false);
+      track.addEventListener('touchcancel', () => isHovered = false);
+    }
+
+    /* ── CART LOGIC ── */
+    let cart = [];
+
+    function toggleCart() {
+      document.getElementById('cartPanel').classList.toggle('open');
+      document.getElementById('cartOverlay').classList.toggle('open');
+    }
+
+    function addToCart(id, name, price, size) {
+      const existing = cart.find(item => item.id === id);
+      if (existing) {
+        existing.quantity += 1;
+      } else {
+        cart.push({ id, name, price, size, quantity: 1 });
+      }
+      saveCart();
+      renderCart();
+      
+      // Open cart drawer immediately on add for visual feedback
+      document.getElementById('cartPanel').classList.add('open');
+      document.getElementById('cartOverlay').classList.add('open');
+    }
+
+    function changeQty(id, delta) {
+      const item = cart.find(item => item.id === id);
+      if (!item) return;
+      item.quantity += delta;
+      if (item.quantity <= 0) {
+        cart = cart.filter(i => i.id !== id);
+      }
+      saveCart();
+      renderCart();
+    }
+
+    function deleteItem(id) {
+      cart = cart.filter(i => i.id !== id);
+      saveCart();
+      renderCart();
+    }
+
+    function saveCart() {
+      localStorage.setItem('ayusiddha_cart', JSON.stringify(cart));
+    }
+
+    function loadCart() {
+      const saved = localStorage.getItem('ayusiddha_cart');
+      if (saved) {
+        try {
+          cart = JSON.parse(saved);
+        } catch (e) {
+          cart = [];
+        }
+      }
+      renderCart();
+    }
+
+    function renderCart() {
+      const container = document.getElementById('cartItemsContainer');
+      const countIndicator = document.getElementById('cartCount');
+      const subtotalEl = document.getElementById('cartSubtotal');
+      
+      container.innerHTML = '';
+      
+      let totalQty = 0;
+      let subtotal = 0;
+      
+      if (cart.length === 0) {
+        container.innerHTML = `
+          <div class="cart-empty">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+            </svg>
+            <p>Your apothecary cart is empty.</p>
+          </div>
+        `;
+        countIndicator.style.display = 'none';
+      } else {
+        cart.forEach(item => {
+          totalQty += item.quantity;
+          subtotal += item.price * item.quantity;
+          
+          const itemEl = document.createElement('div');
+          itemEl.className = 'cart-item';
+          itemEl.innerHTML = `
+            <div class="cart-item-visual">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547"/>
+              </svg>
+            </div>
+            <div class="cart-item-info">
+              <div class="cart-item-name">${item.name}</div>
+              <div class="cart-item-size">${item.size}</div>
+              <div class="cart-item-controls">
+                <div class="qty-controls">
+                  <button class="qty-btn" onclick="changeQty('${item.id}', -1)">-</button>
+                  <span class="qty-value">${item.quantity}</span>
+                  <button class="qty-btn" onclick="changeQty('${item.id}', 1)">+</button>
+                </div>
+                <div class="cart-item-price">₹${item.price * item.quantity}</div>
+                <button class="delete-item-btn" onclick="deleteItem('${item.id}')" aria-label="Delete item">
+                  <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          `;
+          container.appendChild(itemEl);
+        });
+        
+        countIndicator.textContent = totalQty;
+        countIndicator.style.display = 'flex';
+      }
+      
+      subtotalEl.textContent = `₹${subtotal}`;
+    }
+
+    function checkoutWhatsApp() {
+      if (cart.length === 0) return;
+      
+      let message = "Namaste Ayusiddha Team, I would like to place an order for the following Ayurvedic formulations:\n\n";
+      let total = 0;
+      
+      cart.forEach(item => {
+        message += `• ${item.name} (${item.size}) x ${item.quantity} — ₹${item.price * item.quantity}\n`;
+        total += item.price * item.quantity;
+      });
+      
+      message += `\n*Total Amount: ₹${total}*\n\nPlease confirm product availability and provide payment details (UPI/Bank Transfer). Thank you!`;
+      
+      const encodedMsg = encodeURIComponent(message);
+      const url = `https://wa.me/918302898820?text=${encodedMsg}`;
+      window.open(url, '_blank');
+    }
+
+  // ── THREE.JS HERO (floating particles + lotus) ──
+  (function initHero() {
+    const canvas = document.getElementById('canvas-hero');
+    if (!canvas || typeof THREE === 'undefined') return;
+
+    const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(60, canvas.clientWidth / canvas.clientHeight, 0.1, 1000);
+    camera.position.set(0, 0, 10);
+
+    // Floating particles
+    const pGeo = new THREE.BufferGeometry();
+    const count = 280;
+    const pos = new Float32Array(count * 3);
+    const sizes = new Float32Array(count);
+    for (let i = 0; i < count; i++) {
+      pos[i * 3]     = (Math.random() - 0.5) * 30;
+      pos[i * 3 + 1] = (Math.random() - 0.5) * 20;
+      pos[i * 3 + 2] = (Math.random() - 0.5) * 10;
+      sizes[i]       = Math.random() * 0.04 + 0.01;
+    }
+    pGeo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+    const pMat = new THREE.PointsMaterial({ color: 0xB88A44, size: 0.06, transparent: true, opacity: 0.6 });
+    scene.add(new THREE.Points(pGeo, pMat));
+
+    // Rotating torus (mandala ring)
+    const torus1 = new THREE.Mesh(
+      new THREE.TorusGeometry(4, 0.015, 8, 120),
+      new THREE.MeshBasicMaterial({ color: 0xB88A44, transparent: true, opacity: 0.18 })
+    );
+    torus1.position.set(6, 0, -3);
+    scene.add(torus1);
+
+    const torus2 = new THREE.Mesh(
+      new THREE.TorusGeometry(3.2, 0.01, 8, 100),
+      new THREE.MeshBasicMaterial({ color: 0x1F4D3A, transparent: true, opacity: 0.12 })
+    );
+    torus2.position.set(6, 0, -3);
+    scene.add(torus2);
+
+    const torus3 = new THREE.Mesh(
+      new THREE.TorusGeometry(2.4, 0.01, 8, 80),
+      new THREE.MeshBasicMaterial({ color: 0xB88A44, transparent: true, opacity: 0.1 })
+    );
+    torus3.position.set(6, 0, -3);
+    scene.add(torus3);
+
+    // Orbiting small spheres (petals)
+    const orbitGroup = new THREE.Group();
+    orbitGroup.position.set(6, 0, -3);
+    const petalMat = new THREE.MeshBasicMaterial({ color: 0xB88A44, transparent: true, opacity: 0.35 });
+    for (let i = 0; i < 12; i++) {
+      const ang = (i / 12) * Math.PI * 2;
+      const sphere = new THREE.Mesh(new THREE.SphereGeometry(0.08, 8, 8), petalMat);
+      sphere.position.set(Math.cos(ang) * 4, Math.sin(ang) * 4, 0);
+      orbitGroup.add(sphere);
+    }
+    for (let i = 0; i < 8; i++) {
+      const ang = (i / 8) * Math.PI * 2;
+      const sphere2 = new THREE.Mesh(new THREE.SphereGeometry(0.06, 8, 8), new THREE.MeshBasicMaterial({ color: 0x1F4D3A, transparent: true, opacity: 0.3 }));
+      sphere2.position.set(Math.cos(ang) * 3.2, Math.sin(ang) * 3.2, 0);
+      orbitGroup.add(sphere2);
+    }
+    scene.add(orbitGroup);
+
+    let t = 0;
+    function animate() {
+      requestAnimationFrame(animate);
+      t += 0.005;
+      orbitGroup.rotation.z = t * 0.4;
+      torus1.rotation.z = t * 0.2;
+      torus1.rotation.x = t * 0.1;
+      torus2.rotation.z = -t * 0.3;
+      torus3.rotation.z = t * 0.5;
+      // Gentle particle drift
+      const positions = pGeo.attributes.position.array;
+      for (let i = 0; i < count; i++) {
+        positions[i * 3 + 1] += 0.005;
+        if (positions[i * 3 + 1] > 10) positions[i * 3 + 1] = -10;
+      }
+      pGeo.attributes.position.needsUpdate = true;
+      renderer.render(scene, camera);
+    }
+    animate();
+
+    window.addEventListener('resize', () => {
+      const w = canvas.clientWidth, h = canvas.clientHeight;
+      renderer.setSize(w, h);
+      camera.aspect = w / h;
+      camera.updateProjectionMatrix();
+    });
+  })();
+  </script>
+</body>
+</html>
